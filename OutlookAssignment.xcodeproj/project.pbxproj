@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42E8B25E2053C61700B4BABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8B25D2053C61700B4BABE /* AppDelegate.swift */; };
+		42E8B2602053C61700B4BABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8B25F2053C61700B4BABE /* ViewController.swift */; };
+		42E8B2632053C61700B4BABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E8B2612053C61700B4BABE /* Main.storyboard */; };
+		42E8B2652053C61700B4BABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E8B2642053C61700B4BABE /* Assets.xcassets */; };
+		42E8B2682053C61700B4BABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E8B2662053C61700B4BABE /* LaunchScreen.storyboard */; };
+		42E8B2732053C61700B4BABE /* OutlookAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8B2722053C61700B4BABE /* OutlookAssignmentTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42E8B26F2053C61700B4BABE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42E8B2522053C61700B4BABE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42E8B2592053C61700B4BABE;
+			remoteInfo = OutlookAssignment;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		42E8B25A2053C61700B4BABE /* OutlookAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E8B25D2053C61700B4BABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42E8B25F2053C61700B4BABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		42E8B2622053C61700B4BABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42E8B2642053C61700B4BABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42E8B2672053C61700B4BABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42E8B2692053C61700B4BABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E8B26E2053C61700B4BABE /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		42E8B2722053C61700B4BABE /* OutlookAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookAssignmentTests.swift; sourceTree = "<group>"; };
+		42E8B2742053C61700B4BABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42E8B2572053C61700B4BABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E8B26B2053C61700B4BABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42E8B2512053C61700B4BABE = {
+			isa = PBXGroup;
+			children = (
+				42E8B25C2053C61700B4BABE /* OutlookAssignment */,
+				42E8B2712053C61700B4BABE /* OutlookAssignmentTests */,
+				42E8B25B2053C61700B4BABE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42E8B25B2053C61700B4BABE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42E8B25A2053C61700B4BABE /* OutlookAssignment.app */,
+				42E8B26E2053C61700B4BABE /* OutlookAssignmentTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42E8B25C2053C61700B4BABE /* OutlookAssignment */ = {
+			isa = PBXGroup;
+			children = (
+				42E8B25D2053C61700B4BABE /* AppDelegate.swift */,
+				42E8B25F2053C61700B4BABE /* ViewController.swift */,
+				42E8B2612053C61700B4BABE /* Main.storyboard */,
+				42E8B2642053C61700B4BABE /* Assets.xcassets */,
+				42E8B2662053C61700B4BABE /* LaunchScreen.storyboard */,
+				42E8B2692053C61700B4BABE /* Info.plist */,
+			);
+			path = OutlookAssignment;
+			sourceTree = "<group>";
+		};
+		42E8B2712053C61700B4BABE /* OutlookAssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				42E8B2722053C61700B4BABE /* OutlookAssignmentTests.swift */,
+				42E8B2742053C61700B4BABE /* Info.plist */,
+			);
+			path = OutlookAssignmentTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42E8B2592053C61700B4BABE /* OutlookAssignment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E8B2772053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignment" */;
+			buildPhases = (
+				42E8B2562053C61700B4BABE /* Sources */,
+				42E8B2572053C61700B4BABE /* Frameworks */,
+				42E8B2582053C61700B4BABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OutlookAssignment;
+			productName = OutlookAssignment;
+			productReference = 42E8B25A2053C61700B4BABE /* OutlookAssignment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		42E8B26D2053C61700B4BABE /* OutlookAssignmentTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42E8B27A2053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignmentTests" */;
+			buildPhases = (
+				42E8B26A2053C61700B4BABE /* Sources */,
+				42E8B26B2053C61700B4BABE /* Frameworks */,
+				42E8B26C2053C61700B4BABE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42E8B2702053C61700B4BABE /* PBXTargetDependency */,
+			);
+			name = OutlookAssignmentTests;
+			productName = OutlookAssignmentTests;
+			productReference = 42E8B26E2053C61700B4BABE /* OutlookAssignmentTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42E8B2522053C61700B4BABE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Robin Malhotra";
+				TargetAttributes = {
+					42E8B2592053C61700B4BABE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					42E8B26D2053C61700B4BABE = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 42E8B2592053C61700B4BABE;
+					};
+				};
+			};
+			buildConfigurationList = 42E8B2552053C61700B4BABE /* Build configuration list for PBXProject "OutlookAssignment" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42E8B2512053C61700B4BABE;
+			productRefGroup = 42E8B25B2053C61700B4BABE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42E8B2592053C61700B4BABE /* OutlookAssignment */,
+				42E8B26D2053C61700B4BABE /* OutlookAssignmentTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42E8B2582053C61700B4BABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E8B2682053C61700B4BABE /* LaunchScreen.storyboard in Resources */,
+				42E8B2652053C61700B4BABE /* Assets.xcassets in Resources */,
+				42E8B2632053C61700B4BABE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E8B26C2053C61700B4BABE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42E8B2562053C61700B4BABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E8B2602053C61700B4BABE /* ViewController.swift in Sources */,
+				42E8B25E2053C61700B4BABE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		42E8B26A2053C61700B4BABE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42E8B2732053C61700B4BABE /* OutlookAssignmentTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42E8B2702053C61700B4BABE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 42E8B2592053C61700B4BABE /* OutlookAssignment */;
+			targetProxy = 42E8B26F2053C61700B4BABE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		42E8B2612053C61700B4BABE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E8B2622053C61700B4BABE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42E8B2662053C61700B4BABE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42E8B2672053C61700B4BABE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42E8B2752053C61700B4BABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42E8B2762053C61700B4BABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42E8B2782053C61700B4BABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G2XZXD8B4;
+				INFOPLIST_FILE = OutlookAssignment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42E8B2792053C61700B4BABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G2XZXD8B4;
+				INFOPLIST_FILE = OutlookAssignment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		42E8B27B2053C61700B4BABE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G2XZXD8B4;
+				INFOPLIST_FILE = OutlookAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
+			};
+			name = Debug;
+		};
+		42E8B27C2053C61700B4BABE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7G2XZXD8B4;
+				INFOPLIST_FILE = OutlookAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignmentTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42E8B2552053C61700B4BABE /* Build configuration list for PBXProject "OutlookAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E8B2752053C61700B4BABE /* Debug */,
+				42E8B2762053C61700B4BABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42E8B2772053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E8B2782053C61700B4BABE /* Debug */,
+				42E8B2792053C61700B4BABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42E8B27A2053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignmentTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42E8B27B2053C61700B4BABE /* Debug */,
+				42E8B27C2053C61700B4BABE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 42E8B2522053C61700B4BABE /* Project object */;
+}
