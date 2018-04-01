@@ -1,0 +1,17 @@
+Protocol that's an EventDataFloader
+method: loadData (betweenDates: startDate and EndDate)
+
+in the future -> eventKit (checkout eventKit APIs to see what their functions are like)
+
+Currently: just the hardcoded dictionary
+
+viewDidLoad -> set property to dataLoader.getData()
+
+now it's testable (create VC, call viewDidLoad, ensure data is what you expect)
+
+
+
+dataSource has a property that's your actual data. Like IGListKit
+
+
+Keep both table and collectionView delegates in the ViewController.

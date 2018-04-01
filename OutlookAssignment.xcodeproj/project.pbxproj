@@ -3,238 +3,324 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		42E8B25E2053C61700B4BABE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8B25D2053C61700B4BABE /* AppDelegate.swift */; };
-		42E8B2602053C61700B4BABE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8B25F2053C61700B4BABE /* ViewController.swift */; };
-		42E8B2632053C61700B4BABE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E8B2612053C61700B4BABE /* Main.storyboard */; };
-		42E8B2652053C61700B4BABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E8B2642053C61700B4BABE /* Assets.xcassets */; };
-		42E8B2682053C61700B4BABE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E8B2662053C61700B4BABE /* LaunchScreen.storyboard */; };
-		42E8B2732053C61700B4BABE /* OutlookAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8B2722053C61700B4BABE /* OutlookAssignmentTests.swift */; };
+		BF_133397382201 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_689591587218 /* EventCell.swift */; };
+		BF_201106544672 /* DateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_911382929871 /* DateHeaderView.swift */; };
+		BF_246440345540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_598083886815 /* AppDelegate.swift */; };
+		BF_351401592110 /* PlusNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_408772440639 /* PlusNumberView.swift */; };
+		BF_352088762575 /* AttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_642225800371 /* AttendeesView.swift */; };
+		BF_353932559249 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_618149985773 /* UIColor+Hex.swift */; };
+		BF_404617211936 /* EventTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_427279115807 /* EventTimingView.swift */; };
+		BF_418415394445 /* EventDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_729448104008 /* EventDataProvider.swift */; };
+		BF_500797084898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_379966967669 /* LaunchScreen.storyboard */; };
+		BF_504108947674 /* CircularAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_898721149945 /* CircularAvatar.swift */; };
+		BF_515726803494 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_644470534573 /* DayCell.swift */; };
+		BF_533673582875 /* EmptyEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_839302321254 /* EmptyEventsTableViewCell.swift */; };
+		BF_548265381298 /* Attendee.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_819794136458 /* Attendee.swift */; };
+		BF_571471824798 /* MonthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_669041959677 /* MonthTitleView.swift */; };
+		BF_574880598792 /* UIView+alignEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_281895916180 /* UIView+alignEdges.swift */; };
+		BF_621771586145 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_752573872441 /* DotView.swift */; };
+		BF_635399764842 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_389537625973 /* LocationView.swift */; };
+		BF_668220930294 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_129976626392 /* Day.swift */; };
+		BF_673544012464 /* CGRect + Centering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_370506073279 /* CGRect + Centering.swift */; };
+		BF_683537124352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_409928263956 /* Assets.xcassets */; };
+		BF_686639947104 /* Collection+ElementAtIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_678487493343 /* Collection+ElementAtIndex.swift */; };
+		BF_707068814845 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_512129741381 /* EventViewModel.swift */; };
+		BF_822203216781 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_920763256769 /* EventDetailsView.swift */; };
+		BF_826385771561 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_236054590453 /* Constants.swift */; };
+		BF_841295316044 /* OutlookAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_349342137365 /* OutlookAssignmentTests.swift */; };
+		BF_872041590325 /* StaticEventsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_526385930435 /* StaticEventsDataProvider.swift */; };
+		BF_910027222652 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_665503817914 /* EventTableViewCell.swift */; };
+		BF_915293354383 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_650781316638 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		42E8B26F2053C61700B4BABE /* PBXContainerItemProxy */ = {
+		CIP_51801257763 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 42E8B2522053C61700B4BABE /* Project object */;
+			containerPortal = P_9058474000714 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 42E8B2592053C61700B4BABE;
-			remoteInfo = OutlookAssignment;
+			remoteGlobalIDString = NT_518012577638;
+			remoteInfo = OutlookAssignmentTests_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		42E8B25A2053C61700B4BABE /* OutlookAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		42E8B25D2053C61700B4BABE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42E8B25F2053C61700B4BABE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		42E8B2622053C61700B4BABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		42E8B2642053C61700B4BABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		42E8B2672053C61700B4BABE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		42E8B2692053C61700B4BABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42E8B26E2053C61700B4BABE /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		42E8B2722053C61700B4BABE /* OutlookAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookAssignmentTests.swift; sourceTree = "<group>"; };
-		42E8B2742053C61700B4BABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_129976626392 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		FR_232594268034 /* OutlookAssignment.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_236054590453 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FR_281895916180 /* UIView+alignEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+alignEdges.swift"; sourceTree = "<group>"; };
+		FR_314925002723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_349342137365 /* OutlookAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookAssignmentTests.swift; sourceTree = "<group>"; };
+		FR_370506073279 /* CGRect + Centering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + Centering.swift"; sourceTree = "<group>"; };
+		FR_379966967669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FR_389537625973 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		FR_408772440639 /* PlusNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusNumberView.swift; sourceTree = "<group>"; };
+		FR_409928263956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FR_427279115807 /* EventTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimingView.swift; sourceTree = "<group>"; };
+		FR_512129741381 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		FR_518012577638 /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_526385930435 /* StaticEventsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEventsDataProvider.swift; sourceTree = "<group>"; };
+		FR_598083886815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FR_618149985773 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		FR_642225800371 /* AttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesView.swift; sourceTree = "<group>"; };
+		FR_644470534573 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		FR_650781316638 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FR_665503817914 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		FR_669041959677 /* MonthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTitleView.swift; sourceTree = "<group>"; };
+		FR_678487493343 /* Collection+ElementAtIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ElementAtIndex.swift"; sourceTree = "<group>"; };
+		FR_689591587218 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		FR_729448104008 /* EventDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataProvider.swift; sourceTree = "<group>"; };
+		FR_752573872441 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		FR_819794136458 /* Attendee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
+		FR_839302321254 /* EmptyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEventsTableViewCell.swift; sourceTree = "<group>"; };
+		FR_898721149945 /* CircularAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularAvatar.swift; sourceTree = "<group>"; };
+		FR_911382929871 /* DateHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeaderView.swift; sourceTree = "<group>"; };
+		FR_914264470315 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FR_920763256769 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		42E8B2572053C61700B4BABE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42E8B26B2053C61700B4BABE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		42E8B2512053C61700B4BABE = {
+		G_2450873997180 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				42E8B25C2053C61700B4BABE /* OutlookAssignment */,
-				42E8B2712053C61700B4BABE /* OutlookAssignmentTests */,
-				42E8B25B2053C61700B4BABE /* Products */,
+				FR_370506073279 /* CGRect + Centering.swift */,
+				FR_678487493343 /* Collection+ElementAtIndex.swift */,
+				FR_618149985773 /* UIColor+Hex.swift */,
+				FR_281895916180 /* UIView+alignEdges.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		G_4341789877856 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				FR_819794136458 /* Attendee.swift */,
+				FR_512129741381 /* EventViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		G_6945233680929 /* OutlookAssignmentTests */ = {
+			isa = PBXGroup;
+			children = (
+				FR_914264470315 /* Info.plist */,
+				FR_349342137365 /* OutlookAssignmentTests.swift */,
+			);
+			path = OutlookAssignmentTests;
+			sourceTree = "<group>";
+		};
+		G_7007031299588 /* Calendar View */ = {
+			isa = PBXGroup;
+			children = (
+				FR_644470534573 /* DayCell.swift */,
+			);
+			path = "Calendar View";
+			sourceTree = "<group>";
+		};
+		G_7163612876725 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				FR_729448104008 /* EventDataProvider.swift */,
+				FR_526385930435 /* StaticEventsDataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		G_7895617976294 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FR_839302321254 /* EmptyEventsTableViewCell.swift */,
+				FR_689591587218 /* EventCell.swift */,
+				FR_665503817914 /* EventTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		G_8448771205358 = {
+			isa = PBXGroup;
+			children = (
+				G_9058474000714 /* OutlookAssignment */,
+				G_6945233680929 /* OutlookAssignmentTests */,
+				G_8620238527590 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		42E8B25B2053C61700B4BABE /* Products */ = {
+		G_8620238527590 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				42E8B25A2053C61700B4BABE /* OutlookAssignment.app */,
-				42E8B26E2053C61700B4BABE /* OutlookAssignmentTests.xctest */,
+				FR_232594268034 /* OutlookAssignment.app */,
+				FR_518012577638 /* OutlookAssignmentTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		42E8B25C2053C61700B4BABE /* OutlookAssignment */ = {
+		G_8942821618959 /* Agenda View */ = {
 			isa = PBXGroup;
 			children = (
-				42E8B25D2053C61700B4BABE /* AppDelegate.swift */,
-				42E8B25F2053C61700B4BABE /* ViewController.swift */,
-				42E8B2612053C61700B4BABE /* Main.storyboard */,
-				42E8B2642053C61700B4BABE /* Assets.xcassets */,
-				42E8B2662053C61700B4BABE /* LaunchScreen.storyboard */,
-				42E8B2692053C61700B4BABE /* Info.plist */,
+				G_7895617976294 /* Cells */,
+				FR_642225800371 /* AttendeesView.swift */,
+				FR_898721149945 /* CircularAvatar.swift */,
+				FR_911382929871 /* DateHeaderView.swift */,
+				FR_752573872441 /* DotView.swift */,
+				FR_920763256769 /* EventDetailsView.swift */,
+				FR_427279115807 /* EventTimingView.swift */,
+				FR_389537625973 /* LocationView.swift */,
+				FR_669041959677 /* MonthTitleView.swift */,
+				FR_408772440639 /* PlusNumberView.swift */,
 			);
-			path = OutlookAssignment;
+			path = "Agenda View";
 			sourceTree = "<group>";
 		};
-		42E8B2712053C61700B4BABE /* OutlookAssignmentTests */ = {
+		G_9058474000714 /* OutlookAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				42E8B2722053C61700B4BABE /* OutlookAssignmentTests.swift */,
-				42E8B2742053C61700B4BABE /* Info.plist */,
+				G_8942821618959 /* Agenda View */,
+				G_7007031299588 /* Calendar View */,
+				G_7163612876725 /* DataProvider */,
+				G_2450873997180 /* Extensions */,
+				G_4341789877856 /* View Models */,
+				FR_598083886815 /* AppDelegate.swift */,
+				FR_409928263956 /* Assets.xcassets */,
+				FR_650781316638 /* CalendarViewController.swift */,
+				FR_236054590453 /* Constants.swift */,
+				FR_129976626392 /* Day.swift */,
+				FR_314925002723 /* Info.plist */,
+				VG_379966967669 /* LaunchScreen.storyboard */,
 			);
-			path = OutlookAssignmentTests;
+			path = OutlookAssignment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		42E8B2592053C61700B4BABE /* OutlookAssignment */ = {
+		NT_232594268034 /* OutlookAssignment_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42E8B2772053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignment" */;
+			buildConfigurationList = CL_232594268034 /* Build configuration list for PBXNativeTarget "OutlookAssignment_iOS" */;
 			buildPhases = (
-				42E8B2562053C61700B4BABE /* Sources */,
-				42E8B2572053C61700B4BABE /* Frameworks */,
-				42E8B2582053C61700B4BABE /* Resources */,
+				SBP_23259426803 /* Sources */,
+				RBP_23259426803 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = OutlookAssignment;
-			productName = OutlookAssignment;
-			productReference = 42E8B25A2053C61700B4BABE /* OutlookAssignment.app */;
+			name = OutlookAssignment_iOS;
+			productName = OutlookAssignment_iOS;
+			productReference = FR_232594268034 /* OutlookAssignment.app */;
 			productType = "com.apple.product-type.application";
 		};
-		42E8B26D2053C61700B4BABE /* OutlookAssignmentTests */ = {
+		NT_518012577638 /* OutlookAssignmentTests_iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42E8B27A2053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignmentTests" */;
+			buildConfigurationList = CL_518012577638 /* Build configuration list for PBXNativeTarget "OutlookAssignmentTests_iOS" */;
 			buildPhases = (
-				42E8B26A2053C61700B4BABE /* Sources */,
-				42E8B26B2053C61700B4BABE /* Frameworks */,
-				42E8B26C2053C61700B4BABE /* Resources */,
+				SBP_51801257763 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				42E8B2702053C61700B4BABE /* PBXTargetDependency */,
+				TD_871282698976 /* PBXTargetDependency */,
 			);
-			name = OutlookAssignmentTests;
-			productName = OutlookAssignmentTests;
-			productReference = 42E8B26E2053C61700B4BABE /* OutlookAssignmentTests.xctest */;
+			name = OutlookAssignmentTests_iOS;
+			productName = OutlookAssignmentTests_iOS;
+			productReference = FR_518012577638 /* OutlookAssignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		42E8B2522053C61700B4BABE /* Project object */ = {
+		P_9058474000714 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = "Robin Malhotra";
-				TargetAttributes = {
-					42E8B2592053C61700B4BABE = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
-					42E8B26D2053C61700B4BABE = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = 42E8B2592053C61700B4BABE;
-					};
-				};
 			};
-			buildConfigurationList = 42E8B2552053C61700B4BABE /* Build configuration list for PBXProject "OutlookAssignment" */;
-			compatibilityVersion = "Xcode 8.0";
+			buildConfigurationList = CL_905847400071 /* Build configuration list for PBXProject "OutlookAssignment" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
-			mainGroup = 42E8B2512053C61700B4BABE;
-			productRefGroup = 42E8B25B2053C61700B4BABE /* Products */;
+			mainGroup = G_8448771205358;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				42E8B2592053C61700B4BABE /* OutlookAssignment */,
-				42E8B26D2053C61700B4BABE /* OutlookAssignmentTests */,
+				NT_518012577638 /* OutlookAssignmentTests_iOS */,
+				NT_232594268034 /* OutlookAssignment_iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		42E8B2582053C61700B4BABE /* Resources */ = {
+		RBP_23259426803 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E8B2682053C61700B4BABE /* LaunchScreen.storyboard in Resources */,
-				42E8B2652053C61700B4BABE /* Assets.xcassets in Resources */,
-				42E8B2632053C61700B4BABE /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		42E8B26C2053C61700B4BABE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				BF_683537124352 /* Assets.xcassets in Resources */,
+				BF_500797084898 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		42E8B2562053C61700B4BABE /* Sources */ = {
+		SBP_23259426803 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E8B2602053C61700B4BABE /* ViewController.swift in Sources */,
-				42E8B25E2053C61700B4BABE /* AppDelegate.swift in Sources */,
+				BF_246440345540 /* AppDelegate.swift in Sources */,
+				BF_548265381298 /* Attendee.swift in Sources */,
+				BF_352088762575 /* AttendeesView.swift in Sources */,
+				BF_673544012464 /* CGRect + Centering.swift in Sources */,
+				BF_915293354383 /* CalendarViewController.swift in Sources */,
+				BF_504108947674 /* CircularAvatar.swift in Sources */,
+				BF_686639947104 /* Collection+ElementAtIndex.swift in Sources */,
+				BF_826385771561 /* Constants.swift in Sources */,
+				BF_201106544672 /* DateHeaderView.swift in Sources */,
+				BF_668220930294 /* Day.swift in Sources */,
+				BF_515726803494 /* DayCell.swift in Sources */,
+				BF_621771586145 /* DotView.swift in Sources */,
+				BF_533673582875 /* EmptyEventsTableViewCell.swift in Sources */,
+				BF_133397382201 /* EventCell.swift in Sources */,
+				BF_418415394445 /* EventDataProvider.swift in Sources */,
+				BF_822203216781 /* EventDetailsView.swift in Sources */,
+				BF_910027222652 /* EventTableViewCell.swift in Sources */,
+				BF_404617211936 /* EventTimingView.swift in Sources */,
+				BF_707068814845 /* EventViewModel.swift in Sources */,
+				BF_635399764842 /* LocationView.swift in Sources */,
+				BF_571471824798 /* MonthTitleView.swift in Sources */,
+				BF_351401592110 /* PlusNumberView.swift in Sources */,
+				BF_872041590325 /* StaticEventsDataProvider.swift in Sources */,
+				BF_353932559249 /* UIColor+Hex.swift in Sources */,
+				BF_574880598792 /* UIView+alignEdges.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		42E8B26A2053C61700B4BABE /* Sources */ = {
+		SBP_51801257763 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E8B2732053C61700B4BABE /* OutlookAssignmentTests.swift in Sources */,
+				BF_841295316044 /* OutlookAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		42E8B2702053C61700B4BABE /* PBXTargetDependency */ = {
+		TD_871282698976 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42E8B2592053C61700B4BABE /* OutlookAssignment */;
-			targetProxy = 42E8B26F2053C61700B4BABE /* PBXContainerItemProxy */;
+			target = NT_518012577638 /* OutlookAssignmentTests_iOS */;
+			targetProxy = CIP_51801257763 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		42E8B2612053C61700B4BABE /* Main.storyboard */ = {
+		VG_379966967669 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				42E8B2622053C61700B4BABE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		42E8B2662053C61700B4BABE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				42E8B2672053C61700B4BABE /* Base */,
+				FR_379966967669 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -242,7 +328,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		42E8B2752053C61700B4BABE /* Debug */ = {
+		BC_199814199319 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = OutlookAssignment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmalhotra.OutlookAssignment-iOS";
+				PRODUCT_NAME = OutlookAssignment;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC_479945831424 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -271,7 +372,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -281,8 +381,8 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -290,16 +390,57 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
-		42E8B2762053C61700B4BABE /* Release */ = {
+		BC_647395855686 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = OutlookAssignment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmalhotra.OutlookAssignment-iOS";
+				PRODUCT_NAME = OutlookAssignment;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC_688679699864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OutlookAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmalhotra.OutlookAssignmentTests-iOS";
+				PRODUCT_NAME = OutlookAssignmentTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BC_726754744802 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OutlookAssignmentTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rmalhotra.OutlookAssignmentTests-iOS";
+				PRODUCT_NAME = OutlookAssignmentTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BC_881114754245 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -328,7 +469,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -341,109 +481,44 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		42E8B2782053C61700B4BABE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7G2XZXD8B4;
-				INFOPLIST_FILE = OutlookAssignment/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignment;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		42E8B2792053C61700B4BABE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7G2XZXD8B4;
-				INFOPLIST_FILE = OutlookAssignment/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignment;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		42E8B27B2053C61700B4BABE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7G2XZXD8B4;
-				INFOPLIST_FILE = OutlookAssignmentTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignmentTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
-			};
-			name = Debug;
-		};
-		42E8B27C2053C61700B4BABE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7G2XZXD8B4;
-				INFOPLIST_FILE = OutlookAssignmentTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.rmalhotra.OutlookAssignmentTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		42E8B2552053C61700B4BABE /* Build configuration list for PBXProject "OutlookAssignment" */ = {
+		CL_232594268034 /* Build configuration list for PBXNativeTarget "OutlookAssignment_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42E8B2752053C61700B4BABE /* Debug */,
-				42E8B2762053C61700B4BABE /* Release */,
+				BC_647395855686 /* Debug */,
+				BC_199814199319 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
 		};
-		42E8B2772053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignment" */ = {
+		CL_518012577638 /* Build configuration list for PBXNativeTarget "OutlookAssignmentTests_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42E8B2782053C61700B4BABE /* Debug */,
-				42E8B2792053C61700B4BABE /* Release */,
+				BC_726754744802 /* Debug */,
+				BC_688679699864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = "";
 		};
-		42E8B27A2053C61700B4BABE /* Build configuration list for PBXNativeTarget "OutlookAssignmentTests" */ = {
+		CL_905847400071 /* Build configuration list for PBXProject "OutlookAssignment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42E8B27B2053C61700B4BABE /* Debug */,
-				42E8B27C2053C61700B4BABE /* Release */,
+				BC_479945831424 /* Debug */,
+				BC_881114754245 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 42E8B2522053C61700B4BABE /* Project object */;
+	rootObject = P_9058474000714 /* Project object */;
 }

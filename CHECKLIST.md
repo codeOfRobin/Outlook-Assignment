@@ -1,12 +1,28 @@
 # Microsoft Take Home Assignment (0/11)
 
+## Things to mention
+- Handle events stretching across the day
+- How to handle midnight re-jiggering all the indices (there's an NSNOtification for significant date changes)
+- https://staxmanade.com/2015/06/debugging-ios-autolayout-issues/
+- PresenceView needs to be better at handling > 100 avatars (I still add them as subviews which is stupid)
+- Feedback generator
+
+
+## Things to check at the end
+- [ ] Style inconsistencies
+	- [ ] Using NSLayoutConstraints.activate() vs. manual isActives
+	- [ ] .init vs. just Type()
+	- [ ] UIFont.monospacedDigitSystemFont(ofSize: <#T##CGFloat#>, weight: <#T##UIFont.Weight#>) extension
+- [ ] Make nice folders/groups
+
 ## Primitives
 
-- [ ] Date Cell for calendar collection views
-	- [ ] Odd Months - don't forget to unit test the logic for odd/even months
+- [x] Date Cell for calendar collection views
+	- [ ] Odd Months - don't forget to unit test the logic for "odd"/"even" months
 	- [ ] Don't forget to use SF Monospace numbers!
+	- [ ] Remove all hardcoded strings and constants
 	- [ ] Even Months
-	- [ ] Start of month (Need to have month's name) - unit test Model -> Presenter logic
+	- [ ] Start of month (Need to have month's name) - unit test (Model -> Presenter) logic
 	- [ ] event marker
 
 - [ ] Table View Cell for Event Views
@@ -26,6 +42,7 @@
 
 ## Bonus points
 
+- [ ] DateHeaderView blue highlights
 - [ ] Forecast.io API integrationForecast.io
 	- [ ] Don't forget to make sure NSURLSession calls back in the correct thread 
 	- [ ] Add tests for network API calls - mock URLsession object should do the trick

@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
+		window = UIWindow(frame: UIScreen.main.bounds)
+
+		let calendar = Calendar.init(identifier: .gregorian)
+		let eventDataProvider = StaticEventsDataProvider(calendar: calendar)
+		let homeViewController = CalendarViewController(dataProvider: eventDataProvider)
+
+		let nav = UINavigationController.init(rootViewController: homeViewController)
+		homeViewController.view.backgroundColor = .white
+		window?.rootViewController = nav
+		window?.makeKeyAndVisible()
 		return true
 	}
 
