@@ -15,13 +15,7 @@ extension CGSize {
 		let point = CGPoint(x: max(centeredPoint.x, rect.minX), y: max(centeredPoint.y, rect.minY))
 		return CGRect(origin: point, size: size)
 	}
-
-	public func centeredHorizontally(in rect: CGRect, top: CGFloat = 0) -> CGRect {
-		var rect = centered(in: rect)
-		rect.origin.y = top
-		return rect
-	}
-
+	
 	public func centeredVertically(in rect: CGRect, left: CGFloat = 0) -> CGRect {
 		var rect = centered(in: rect)
 		rect.origin.x = left

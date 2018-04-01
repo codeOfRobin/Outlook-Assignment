@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		428868022071568800F135B9 /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428868012071568800F135B9 /* DayTests.swift */; };
+		42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42886807207158AA00F135B9 /* ExtensionTests.swift */; };
+		42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CA20716494008E0E9E /* DataSourceTests.swift */; };
 		BF_133397382201 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_689591587218 /* EventCell.swift */; };
 		BF_201106544672 /* DateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_911382929871 /* DateHeaderView.swift */; };
 		BF_246440345540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_598083886815 /* AppDelegate.swift */; };
 		BF_351401592110 /* PlusNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_408772440639 /* PlusNumberView.swift */; };
 		BF_352088762575 /* AttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_642225800371 /* AttendeesView.swift */; };
 		BF_353932559249 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_618149985773 /* UIColor+Hex.swift */; };
-		BF_371554432736 = {isa = PBXBuildFile; fileRef = FR_232594268034 /* OutlookAssignment.app */; };
-		BF_375492529347 = {isa = PBXBuildFile; fileRef = FR_518012577638 /* OutlookAssignmentTests.xctest */; };
 		BF_377049340755 /* AgendaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_381480004977 /* AgendaDataSource.swift */; };
 		BF_404617211936 /* EventTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_427279115807 /* EventTimingView.swift */; };
 		BF_460376240917 /* EventDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_499962432609 /* EventDataProvider.swift */; };
@@ -43,16 +44,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CIP_51801257763 /* PBXContainerItemProxy */ = {
+		42886805207156E200F135B9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = P_9058474000714 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = NT_518012577638;
-			remoteInfo = OutlookAssignmentTests_iOS;
+			remoteGlobalIDString = NT_232594268034;
+			remoteInfo = OutlookAssignment_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		428868012071568800F135B9 /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
+		42886807207158AA00F135B9 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		42C210CA20716494008E0E9E /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		FR_129976626392 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		FR_226640608260 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		FR_232594268034 /* OutlookAssignment.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +74,7 @@
 		FR_468679413091 /* EventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
 		FR_499962432609 /* EventDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataProvider.swift; sourceTree = "<group>"; };
 		FR_512129741381 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
-		FR_518012577638 /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_518012577638 /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_598083886815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FR_618149985773 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FR_642225800371 /* AttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,9 @@
 		G_6945233680929 /* OutlookAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				428868012071568800F135B9 /* DayTests.swift */,
+				42886807207158AA00F135B9 /* ExtensionTests.swift */,
+				42C210CA20716494008E0E9E /* DataSourceTests.swift */,
 				FR_914264470315 /* Info.plist */,
 				FR_349342137365 /* OutlookAssignmentTests.swift */,
 			);
@@ -232,7 +239,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				TD_871282698976 /* PBXTargetDependency */,
+				42886806207156E200F135B9 /* PBXTargetDependency */,
 			);
 			name = OutlookAssignmentTests_iOS;
 			productName = OutlookAssignmentTests_iOS;
@@ -246,6 +253,11 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
+				TargetAttributes = {
+					NT_518012577638 = {
+						TestTargetID = NT_232594268034;
+					};
+				};
 			};
 			buildConfigurationList = CL_905847400071 /* Build configuration list for PBXProject "OutlookAssignment" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -316,6 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */,
+				42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */,
+				428868022071568800F135B9 /* DayTests.swift in Sources */,
 				BF_841295316044 /* OutlookAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,10 +338,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		TD_871282698976 /* PBXTargetDependency */ = {
+		42886806207156E200F135B9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = NT_518012577638 /* OutlookAssignmentTests_iOS */;
-			targetProxy = CIP_51801257763 /* PBXContainerItemProxy */;
+			target = NT_232594268034 /* OutlookAssignment_iOS */;
+			targetProxy = 42886805207156E200F135B9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -438,6 +453,7 @@
 				PRODUCT_NAME = OutlookAssignmentTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
 			};
 			name = Release;
 		};
@@ -451,6 +467,7 @@
 				PRODUCT_NAME = OutlookAssignmentTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
 			};
 			name = Debug;
 		};

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Collection {
+public extension Collection {
 	func element(at offset: IndexDistance) -> Element? {
 		let optionalIndex = self.index(self.startIndex, offsetBy: offset, limitedBy: endIndex)
 		guard let index = optionalIndex else { return nil }

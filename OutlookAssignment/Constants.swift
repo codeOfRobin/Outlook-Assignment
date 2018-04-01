@@ -8,14 +8,6 @@
 
 import UIKit
 
-
-func style(from color: UIColor, weight: UIFont.Weight, size: CGFloat) -> [NSAttributedStringKey: Any] {
-	return [
-		.font: UIFont.systemFont(ofSize: size, weight: weight),
-		.foregroundColor: color
-	]
-}
-
 func style(from color: UIColor, font: UIFont) -> [NSAttributedStringKey: Any] {
 	return [
 		NSAttributedStringKey.font: font,
