@@ -8,27 +8,19 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CalendarViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
 	let eventDataProvider: EventDataProvider
-
-	var events: [Day: [EventViewModel]] = [:]
-	//TODO: Needs to be var for midnight date changing reasons
-	var today = Date()
-
-	var calendar = Calendar(identifier: .gregorian)
-	//mutating a `DateFormatter` is just as expensive as creating one, because changing the calendar, timezone, locale, or format causes new stuff to be loaded
-	//the cost of `DateFormatter` comes from it loading up the formatting and region information from ICU
-	let headerDateFormatter = DateFormatter()
-	let collectionViewDateFormatter = DateFormatter()
-
-	var offsets = -100...100
 
 	//	#A week is always seven days
 	//	Currently true, but historically false. A couple of out-of-use calendars, like the Decimal calendar and the Egyptian calendar had weeks that were 7, 8, or even 10 days.
 	let numberOfColumns: CGFloat = 7
 
 	let generator = UIImpactFeedbackGenerator(style: .light)
+
+	//mutating a `DateFormatter` is just as expensive as creating one, because changing the calendar, timezone, locale, or format causes new stuff to be loaded
+	//the cost of `DateFormatter` comes from it loading up the formatting and region information from ICU
+	let headerDateFormatter = DateFormatter()
 
 	var indexPathOfHighlightedCell: IndexPath {
 		didSet {
@@ -43,7 +35,6 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
 	let tableView = UITableView()
 	let collectionView: UICollectionView
 	let layout = MonthFlowLayout()
-//	let layout = UICollectionViewFlowLayout()
 
 	enum ExpandedView {
 		case agenda
@@ -51,11 +42,18 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
 	}
 
 	var expandedState: ExpandedView = .agenda
+	let eventSource = EventSource()
+
+	let agendaDataSource: AgendaDataSource
+	let calendarDataSource: CalendarDataSource
 
 	init(dataProvider: EventDataProvider) {
 		self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		// not sure if this is the best way to go to the middle
-		self.indexPathOfHighlightedCell = IndexPath(row: 0, section: offsets.count/2)
+		self.indexPathOfHighlightedCell = IndexPath(row: 0, section: eventSource.offsets.count/2)
+
+		self.agendaDataSource = AgendaDataSource(eventSource: eventSource)
+		self.calendarDataSource = CalendarDataSource(eventSource: eventSource)
 
 		self.eventDataProvider = dataProvider
 		super.init(nibName: nil, bundle: nil)
@@ -68,29 +66,26 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		let firstDate = calendar.date(byAdding: .day, value: offsets.first ?? 0, to: today)
-		let lastDate = calendar.date(byAdding: .day, value: offsets.last ?? 0, to: today)
-		eventDataProvider.loadEvents(from: firstDate ?? Date(), to: lastDate ?? Date()) { [weak self] (results) in
+		headerDateFormatter.dateStyle = .medium
+
+		let (firstDate, lastDate) = eventSource.dateRange
+		eventDataProvider.loadEvents(from: firstDate, to: lastDate) { [weak self] (results) in
 			guard let strongSelf = self else {
 				return
 			}
-			strongSelf.events = results.reduce([:], { (dict, arg) in
+			strongSelf.eventSource.events = results.reduce([:], { (dict, arg) in
 				let (date, events) = arg
 				var copy = dict
-				if let day = Day(from: date, calendar: strongSelf.calendar) {
+				if let day = Day(from: date, calendar: strongSelf.eventSource.calendar) {
 					copy[day] = events
 				}
 				return copy
 			})
-			let sectionsToReload = 0..<(strongSelf.offsets.count)
+			let sectionsToReload = 0..<(strongSelf.eventSource.offsets.count)
 			strongSelf.tableView.reloadSections(IndexSet(integersIn: sectionsToReload), with: .fade)
 		}
 
-		headerDateFormatter.dateStyle = .medium
-		collectionViewDateFormatter.dateStyle = .short
-		calendar.locale = Locale.current
-
-		tableView.dataSource = self
+		tableView.dataSource = agendaDataSource
 		tableView.register(EventCell.self, forCellReuseIdentifier: "eventCell")
 		tableView.register(EmptyEventsTableViewCell.self, forCellReuseIdentifier: "emptyEventsCell")
 		tableView.register(DateHeaderView.self, forHeaderFooterViewReuseIdentifier: "header")
@@ -99,12 +94,12 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
 		tableView.sectionHeaderHeight = UITableViewAutomaticDimension
 		tableView.tableFooterView = UIView()
 
-		collectionView.dataSource = self
+		collectionView.dataSource = calendarDataSource
 		collectionView.delegate = self
 		collectionView.register(DayCell.self, forCellWithReuseIdentifier: "cell")
 		collectionView.backgroundColor = .white
 
-		tableView.scrollToRow(at: IndexPath(row: 0, section: offsets.count/2), at: .middle, animated: true)
+		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 		view.backgroundColor = .white
 		view.addSubview(tableView)
 		view.addSubview(collectionView)
@@ -137,85 +132,14 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
 
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? DateHeaderView,
-		let date = dateFrom(offset: section) else {
-			return nil
+			let date = eventSource.dateFrom(offset: section) else {
+				return nil
 		}
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateStyle = .medium
-		header.configure(title: headerDateFormatter.string(from: date), shouldHighlight: calendar.isDate(date, equalTo: today, toGranularity: .day))
+		let isToday = eventSource.isDateSameDayAsToday(date)
+		header.configure(title: headerDateFormatter.string(from: date), shouldHighlight: isToday)
 		return header
-	}
-
-	func numberOfSections(in tableView: UITableView) -> Int {
-		return offsets.count
-	}
-
-	func dateFrom(offset: Int) -> Date? {
-		if let offset = offsets.element(at: offset),
-			let date = calendar.date(byAdding: .day, value: offset, to: today) {
-			return date
-		} else {
-			return nil
-		}
-	}
-
-	func eventsFromDataset(at index: Int) -> [EventViewModel] {
-		if let date = dateFrom(offset: index),
-			let day = Day(from: calendar.dateComponents([.day, .month, .year, .era], from: date)),
-			let events = events[day] {
-			return events
-		} else {
-			return []
-		}
-	}
-
-	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let events = eventsFromDataset(at: section)
-		if events.count > 0 {
-			return events.count
-		} else {
-			return 1
-		}
-	}
-
-	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let events = eventsFromDataset(at: indexPath.section)
-
-		if events.count > 0 {
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventCell else {
-				return UITableViewCell()
-			}
-			cell.configure(with: events[indexPath.row])
-			return cell
-		} else {
-			guard let cell = tableView.dequeueReusableCell(withIdentifier: "emptyEventsCell", for: indexPath) as? EmptyEventsTableViewCell else {
-				return UITableViewCell()
-			}
-			cell.configure(text: Constants.Strings.noEvents)
-			return cell
-		}
-	}
-
-
-	func numberOfSections(in collectionView: UICollectionView) -> Int {
-		return 1
-	}
-
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return offsets.count
-	}
-
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DayCell else {
-			return UICollectionViewCell()
-		}
-		if let date = dateFrom(offset: indexPath.row) {
-			let day = calendar.component(.day, from: date)
-			let month = calendar.component(.month, from: date)
-			let monthName = calendar.shortMonthSymbols[month - 1]
-			cell.configure(with: day, month: monthName, isOdd: (month % 2 == 0))
-		}
-		return cell
 	}
 
 	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {

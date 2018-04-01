@@ -13,8 +13,12 @@
 		BF_351401592110 /* PlusNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_408772440639 /* PlusNumberView.swift */; };
 		BF_352088762575 /* AttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_642225800371 /* AttendeesView.swift */; };
 		BF_353932559249 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_618149985773 /* UIColor+Hex.swift */; };
+		BF_371554432736 = {isa = PBXBuildFile; fileRef = FR_232594268034 /* OutlookAssignment.app */; };
+		BF_375492529347 = {isa = PBXBuildFile; fileRef = FR_518012577638 /* OutlookAssignmentTests.xctest */; };
+		BF_377049340755 /* AgendaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_381480004977 /* AgendaDataSource.swift */; };
 		BF_404617211936 /* EventTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_427279115807 /* EventTimingView.swift */; };
-		BF_418415394445 /* EventDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_729448104008 /* EventDataProvider.swift */; };
+		BF_460376240917 /* EventDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_499962432609 /* EventDataProvider.swift */; };
+		BF_489203749641 /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_226640608260 /* CalendarDataSource.swift */; };
 		BF_500797084898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_379966967669 /* LaunchScreen.storyboard */; };
 		BF_504108947674 /* CircularAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_898721149945 /* CircularAvatar.swift */; };
 		BF_515726803494 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_644470534573 /* DayCell.swift */; };
@@ -25,6 +29,7 @@
 		BF_621771586145 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_752573872441 /* DotView.swift */; };
 		BF_635399764842 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_389537625973 /* LocationView.swift */; };
 		BF_668220930294 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_129976626392 /* Day.swift */; };
+		BF_670999139963 /* StaticEventsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_762469995347 /* StaticEventsDataProvider.swift */; };
 		BF_673544012464 /* CGRect + Centering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_370506073279 /* CGRect + Centering.swift */; };
 		BF_683537124352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FR_409928263956 /* Assets.xcassets */; };
 		BF_686639947104 /* Collection+ElementAtIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_678487493343 /* Collection+ElementAtIndex.swift */; };
@@ -32,8 +37,8 @@
 		BF_822203216781 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_920763256769 /* EventDetailsView.swift */; };
 		BF_826385771561 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_236054590453 /* Constants.swift */; };
 		BF_841295316044 /* OutlookAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_349342137365 /* OutlookAssignmentTests.swift */; };
-		BF_872041590325 /* StaticEventsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_526385930435 /* StaticEventsDataProvider.swift */; };
 		BF_910027222652 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_665503817914 /* EventTableViewCell.swift */; };
+		BF_910540538205 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_468679413091 /* EventSource.swift */; };
 		BF_915293354383 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_650781316638 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		FR_129976626392 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		FR_226640608260 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		FR_232594268034 /* OutlookAssignment.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_236054590453 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FR_281895916180 /* UIView+alignEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+alignEdges.swift"; sourceTree = "<group>"; };
@@ -56,13 +62,15 @@
 		FR_349342137365 /* OutlookAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookAssignmentTests.swift; sourceTree = "<group>"; };
 		FR_370506073279 /* CGRect + Centering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + Centering.swift"; sourceTree = "<group>"; };
 		FR_379966967669 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FR_381480004977 /* AgendaDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaDataSource.swift; sourceTree = "<group>"; };
 		FR_389537625973 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
 		FR_408772440639 /* PlusNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusNumberView.swift; sourceTree = "<group>"; };
 		FR_409928263956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FR_427279115807 /* EventTimingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTimingView.swift; sourceTree = "<group>"; };
+		FR_468679413091 /* EventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
+		FR_499962432609 /* EventDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataProvider.swift; sourceTree = "<group>"; };
 		FR_512129741381 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		FR_518012577638 /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FR_526385930435 /* StaticEventsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEventsDataProvider.swift; sourceTree = "<group>"; };
 		FR_598083886815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FR_618149985773 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FR_642225800371 /* AttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesView.swift; sourceTree = "<group>"; };
@@ -72,8 +80,8 @@
 		FR_669041959677 /* MonthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTitleView.swift; sourceTree = "<group>"; };
 		FR_678487493343 /* Collection+ElementAtIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ElementAtIndex.swift"; sourceTree = "<group>"; };
 		FR_689591587218 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
-		FR_729448104008 /* EventDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataProvider.swift; sourceTree = "<group>"; };
 		FR_752573872441 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
+		FR_762469995347 /* StaticEventsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEventsDataProvider.swift; sourceTree = "<group>"; };
 		FR_819794136458 /* Attendee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
 		FR_839302321254 /* EmptyEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyEventsTableViewCell.swift; sourceTree = "<group>"; };
 		FR_898721149945 /* CircularAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularAvatar.swift; sourceTree = "<group>"; };
@@ -112,21 +120,24 @@
 			path = OutlookAssignmentTests;
 			sourceTree = "<group>";
 		};
+		G_6961054579414 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FR_381480004977 /* AgendaDataSource.swift */,
+				FR_226640608260 /* CalendarDataSource.swift */,
+				FR_499962432609 /* EventDataProvider.swift */,
+				FR_468679413091 /* EventSource.swift */,
+				FR_762469995347 /* StaticEventsDataProvider.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
 		G_7007031299588 /* Calendar View */ = {
 			isa = PBXGroup;
 			children = (
 				FR_644470534573 /* DayCell.swift */,
 			);
 			path = "Calendar View";
-			sourceTree = "<group>";
-		};
-		G_7163612876725 /* DataProvider */ = {
-			isa = PBXGroup;
-			children = (
-				FR_729448104008 /* EventDataProvider.swift */,
-				FR_526385930435 /* StaticEventsDataProvider.swift */,
-			);
-			path = DataProvider;
 			sourceTree = "<group>";
 		};
 		G_7895617976294 /* Cells */ = {
@@ -179,7 +190,7 @@
 			children = (
 				G_8942821618959 /* Agenda View */,
 				G_7007031299588 /* Calendar View */,
-				G_7163612876725 /* DataProvider */,
+				G_6961054579414 /* Data Sources */,
 				G_2450873997180 /* Extensions */,
 				G_4341789877856 /* View Models */,
 				FR_598083886815 /* AppDelegate.swift */,
@@ -270,10 +281,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF_377049340755 /* AgendaDataSource.swift in Sources */,
 				BF_246440345540 /* AppDelegate.swift in Sources */,
 				BF_548265381298 /* Attendee.swift in Sources */,
 				BF_352088762575 /* AttendeesView.swift in Sources */,
 				BF_673544012464 /* CGRect + Centering.swift in Sources */,
+				BF_489203749641 /* CalendarDataSource.swift in Sources */,
 				BF_915293354383 /* CalendarViewController.swift in Sources */,
 				BF_504108947674 /* CircularAvatar.swift in Sources */,
 				BF_686639947104 /* Collection+ElementAtIndex.swift in Sources */,
@@ -284,15 +297,16 @@
 				BF_621771586145 /* DotView.swift in Sources */,
 				BF_533673582875 /* EmptyEventsTableViewCell.swift in Sources */,
 				BF_133397382201 /* EventCell.swift in Sources */,
-				BF_418415394445 /* EventDataProvider.swift in Sources */,
+				BF_460376240917 /* EventDataProvider.swift in Sources */,
 				BF_822203216781 /* EventDetailsView.swift in Sources */,
+				BF_910540538205 /* EventSource.swift in Sources */,
 				BF_910027222652 /* EventTableViewCell.swift in Sources */,
 				BF_404617211936 /* EventTimingView.swift in Sources */,
 				BF_707068814845 /* EventViewModel.swift in Sources */,
 				BF_635399764842 /* LocationView.swift in Sources */,
 				BF_571471824798 /* MonthTitleView.swift in Sources */,
 				BF_351401592110 /* PlusNumberView.swift in Sources */,
-				BF_872041590325 /* StaticEventsDataProvider.swift in Sources */,
+				BF_670999139963 /* StaticEventsDataProvider.swift in Sources */,
 				BF_353932559249 /* UIColor+Hex.swift in Sources */,
 				BF_574880598792 /* UIView+alignEdges.swift in Sources */,
 			);
