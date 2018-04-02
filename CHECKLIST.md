@@ -9,40 +9,40 @@
 
 
 ## Things to check at the end
-- [ ] Style inconsistencies
-	- [ ] Using NSLayoutConstraints.activate() vs. manual isActives
-	- [ ] .init vs. just Type()
-	- [ ] UIFont.monospacedDigitSystemFont(ofSize: <#T##CGFloat#>, weight: <#T##UIFont.Weight#>) extension
-- [ ] Make nice folders/groups
+- [x] Style inconsistencies
+	- [x] Using NSLayoutConstraints.activate() vs. manual isActives
+	- [x] .init vs. just Type()
+	- [x] UIFont.monospacedDigitSystemFont(ofSize: <#T##CGFloat#>, weight: <#T##UIFont.Weight#>) extension
+- [x] Make nice folders/groups
 
 ## Primitives
 
-- [x] Date Cell for calendar collection views
+- [ ] Date Cell for calendar collection views
 	- [ ] Odd Months - don't forget to unit test the logic for "odd"/"even" months
-	- [ ] Don't forget to use SF Monospace numbers!
-	- [ ] Remove all hardcoded strings and constants
+	- [x] Don't forget to use SF Monospace numbers!
+	- [x] Remove all hardcoded strings and constants
 	- [ ] Even Months
 	- [ ] Start of month (Need to have month's name) - unit test (Model -> Presenter) logic
 	- [ ] event marker
 
-- [ ] Table View Cell for Event Views
-	- [ ] _No events_
-	- [ ] Multiple events - default with title and stuff
-	- [ ] Multiple events with attendees
-	- [ ] Holidays that are all day
+- [x] Table View Cell for Event Views
+	- [x] _No events_
+	- [x] Multiple events - default with title and stuff
+	- [x] Multiple events with attendees
+	- [x] Holidays that are all day
 
 
 ## Bare Minimums
 
 - [ ] Overlay thing on top of months as you scroll
-- [ ] Move date indicator as you scroll
-- [ ] Sync scrolling of events table -> calendar
-- [ ] Tapping on date -> scroll in events table view
-- [ ] Expand/Contract calendar and events table view
+- [x] Move date indicator as you scroll
+- [x] Sync scrolling of events table -> calendar
+- [x] Tapping on date -> scroll in events table view
+- [x] Expand/Contract calendar and events table view
 
 ## Bonus points
 
-- [ ] DateHeaderView blue highlights
+- [x] DateHeaderView blue highlights
 - [ ] Forecast.io API integrationForecast.io
 	- [ ] Don't forget to make sure NSURLSession calls back in the correct thread 
 	- [ ] Add tests for network API calls - mock URLsession object should do the trick
@@ -51,5 +51,4 @@
 	- [ ] Showing multiple loaders in each day? 🤔
 	- [ ] See if forecast lets you get multiple days
 	- [ ] Otherwise just show today's forecast
-- [ ] RTL support
-- [ ] Dynamic type support
+- [x] Dynamic type support

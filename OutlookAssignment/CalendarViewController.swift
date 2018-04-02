@@ -153,7 +153,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		if scrollView == tableView,
 			let firstIndexPath = tableView.indexPathsForVisibleRows?.first,
 			self.indexPathOfHighlightedCell != firstIndexPath {
-			let collectionViewIndexPath = IndexPath.init(row: firstIndexPath.section, section: 0)
+			let collectionViewIndexPath = IndexPath(row: firstIndexPath.section, section: 0)
 			collectionView.scrollToItem(at: collectionViewIndexPath, at: .bottom, animated: true)
 			self.indexPathOfHighlightedCell = collectionViewIndexPath
 		}
@@ -161,7 +161,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		self.indexPathOfHighlightedCell = indexPath
-		tableView.scrollToRow(at: IndexPath.init(row: 0, section: indexPath.row), at: .top, animated: true)
+		tableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.row), at: .top, animated: true)
 	}
 
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {

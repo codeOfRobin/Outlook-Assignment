@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		window = UIWindow(frame: UIScreen.main.bounds)
 
-		let calendar = Calendar.init(identifier: .gregorian)
+		let calendar = Calendar(identifier: .gregorian)
 		let eventDataProvider = StaticEventsDataProvider(calendar: calendar)
 		let homeViewController = CalendarViewController(dataProvider: eventDataProvider)
 
-		let nav = UINavigationController.init(rootViewController: homeViewController)
+		let nav = UINavigationController(rootViewController: homeViewController)
 		homeViewController.view.backgroundColor = .white
 		window?.rootViewController = nav
 		window?.makeKeyAndVisible()

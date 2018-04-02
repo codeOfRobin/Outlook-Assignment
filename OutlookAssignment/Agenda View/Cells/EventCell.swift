@@ -30,10 +30,11 @@ class EventCell: UITableViewCell {
 		mainStackView.translatesAutoresizingMaskIntoConstraints = false
 		self.mainStackView.alignEdges(to: self.contentView, insets: insets)
 
-		dotView.heightAnchor.constraint(equalToConstant: 20.0).isActive = true
-		dotView.widthAnchor.constraint(equalToConstant: 20.0).isActive = true
-
-		eventTimingView.widthAnchor.constraint(equalToConstant: 80.0).isActive = true
+		NSLayoutConstraint.activate([
+			dotView.heightAnchor.constraint(equalToConstant: 20.0),
+			dotView.widthAnchor.constraint(equalToConstant: 20.0),
+			eventTimingView.widthAnchor.constraint(equalToConstant: 80.0)
+		])
 
 		self.mainStackView.alignment = .firstBaseline
 

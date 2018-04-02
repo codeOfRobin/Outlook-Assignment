@@ -35,7 +35,7 @@ class EventTimingView: UIView {
 		let durationIntrinsicSize = durationLabel.intrinsicContentSize
 		let durationSize = durationLabel.sizeThatFits(CGSize(width: min(frame.size.width, durationIntrinsicSize.width), height: CGFloat.greatestFiniteMagnitude))
 		startingTimeLabel.frame = CGRect(origin: .zero, size: startingTimeSize)
-		durationLabel.frame = CGRect.init(x: 0, y: startingTimeLabel.frame.maxY + margin, width: durationSize.width, height: durationSize.height)
+		durationLabel.frame = CGRect(x: 0, y: startingTimeLabel.frame.maxY + margin, width: durationSize.width, height: durationSize.height)
 	}
 
 	override var intrinsicContentSize: CGSize {

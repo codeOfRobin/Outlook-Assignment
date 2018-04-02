@@ -61,7 +61,7 @@ class AttendeesView: UIView {
 			plusNumberView.configure(with: circles.count - numberOfAvatarsToFit + 1)
 			let leftover = self.frame.width - CGFloat(numberOfAvatarsToFit) * circleEdge
 			let lastCircleFrame = (circles.prefix(numberOfAvatarsToFit - 1).last?.frame ?? .zero)
-			let plusNumberSize = plusNumberView.sizeThatFits(CGSize.init(width: leftover, height: circleEdge))
+			let plusNumberSize = plusNumberView.sizeThatFits(CGSize(width: leftover, height: circleEdge))
 			plusNumberView.frame = plusNumberSize.centeredVertically(in: self.bounds, left: lastCircleFrame.maxX + margin)
 		}
 

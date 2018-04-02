@@ -47,7 +47,7 @@ class MonthFlowLayout: UICollectionViewFlowLayout {
 			if elementKind == self.titleKind {
 				let atts = UICollectionViewLayoutAttributes(
 					forDecorationViewOfKind:self.titleKind, with:indexPath)
-				atts.frame = CGRect.init(x: 10, y: 10 * indexPath.row, width: 200, height: 20)
+				atts.frame = CGRect(x: 10, y: 10 * indexPath.row, width: 200, height: 20)
 				atts.alpha = 0.0
 				return atts
 			}

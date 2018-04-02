@@ -19,7 +19,6 @@ func fontWithMonospacedNumbers(_ font: UIFont) -> UIFont {
 	let fontDescriptor = font.fontDescriptor.addingAttributes(
 		[UIFontDescriptor.AttributeName.featureSettings: features]
 	)
-
 	return UIFont(descriptor: fontDescriptor, size: font.pointSize)
 }
 
@@ -39,7 +38,7 @@ class PlusNumberView: UIView {
 
 	func configure(with number: Int) {
 
-		self.label.attributedText = NSAttributedString.init(string: "+\(number)", attributes: Styles.Text.PlusNumberStyle)
+		self.label.attributedText = NSAttributedString(string: "+\(number)", attributes: Styles.Text.PlusNumberStyle)
 	}
 
 	override var intrinsicContentSize: CGSize {

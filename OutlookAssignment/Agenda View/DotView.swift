@@ -29,10 +29,10 @@ class DotView: UIView {
 	}
 
 	override var intrinsicContentSize: CGSize {
-		return CGSize.init(width: 20.0, height: 20.0)
+		return CGSize(width: 20.0, height: 20.0)
 	}
 
 	override func sizeThatFits(_ size: CGSize) -> CGSize {
-		return CGSize.init(width: 20.0, height: 20.0)
+		return CGSize(width: 20.0, height: 20.0)
 	}
 }
