@@ -62,6 +62,5 @@ class EventTimingView: UIView {
 			self.startingTimeLabel.attributedText = NSAttributedString(string: startingTime, attributes: Styles.Text.StartingTimeStyle)
 			self.durationLabel.attributedText = NSAttributedString(string: duration, attributes: Styles.Text.Duration)
 		}
-		self.setNeedsLayout()
 	}
 }

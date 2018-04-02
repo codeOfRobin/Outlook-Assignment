@@ -74,14 +74,13 @@ class AttendeesView: UIView {
 			switch avatar {
 			case .image(let image):
 				return CircularAvatar(image: image)
-			case .initials(let char1, let char2):
-				return nil
+//			case .initials(let char1, let char2):
+//				return nil
 			}
 		}
 
 		newCircles.forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
 		newCircles.forEach { self.addSubview($0) }
 		self.circles = newCircles
-		self.setNeedsLayout()
 	}
 }

@@ -13,8 +13,9 @@ struct Attendee {
 
 	enum Avatar {
 		case image(UIImage)
+		//Not supporting arbitrary initials right now, will add in the future
 		//initials are really just 1-2 characters
-		case initials(Character, Character?)
+//		case initials(Character, Character?)
 	}
 
 	let avatar: Avatar
