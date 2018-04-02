@@ -10,6 +10,7 @@
 		428868022071568800F135B9 /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428868012071568800F135B9 /* DayTests.swift */; };
 		42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42886807207158AA00F135B9 /* ExtensionTests.swift */; };
 		42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CA20716494008E0E9E /* DataSourceTests.swift */; };
+		42C210CD2071FF14008E0E9E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */; };
 		BF_133397382201 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_689591587218 /* EventCell.swift */; };
 		BF_201106544672 /* DateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_911382929871 /* DateHeaderView.swift */; };
 		BF_246440345540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_598083886815 /* AppDelegate.swift */; };
@@ -38,7 +39,6 @@
 		BF_822203216781 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_920763256769 /* EventDetailsView.swift */; };
 		BF_826385771561 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_236054590453 /* Constants.swift */; };
 		BF_841295316044 /* OutlookAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_349342137365 /* OutlookAssignmentTests.swift */; };
-		BF_910027222652 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_665503817914 /* EventTableViewCell.swift */; };
 		BF_910540538205 /* EventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_468679413091 /* EventSource.swift */; };
 		BF_915293354383 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_650781316638 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +57,7 @@
 		428868012071568800F135B9 /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
 		42886807207158AA00F135B9 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		42C210CA20716494008E0E9E /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
+		42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForecastAPIClient.swift; path = "Forecast Integration/ForecastAPIClient.swift"; sourceTree = "<group>"; };
 		FR_129976626392 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		FR_226640608260 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		FR_232594268034 /* OutlookAssignment.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +81,6 @@
 		FR_642225800371 /* AttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesView.swift; sourceTree = "<group>"; };
 		FR_644470534573 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		FR_650781316638 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		FR_665503817914 /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		FR_669041959677 /* MonthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTitleView.swift; sourceTree = "<group>"; };
 		FR_678487493343 /* Collection+ElementAtIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ElementAtIndex.swift"; sourceTree = "<group>"; };
 		FR_689591587218 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
@@ -130,10 +130,10 @@
 		G_6961054579414 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FR_468679413091 /* EventSource.swift */,
 				FR_381480004977 /* AgendaDataSource.swift */,
 				FR_226640608260 /* CalendarDataSource.swift */,
 				FR_499962432609 /* EventDataProvider.swift */,
-				FR_468679413091 /* EventSource.swift */,
 				FR_762469995347 /* StaticEventsDataProvider.swift */,
 			);
 			path = "Data Sources";
@@ -152,7 +152,6 @@
 			children = (
 				FR_839302321254 /* EmptyEventsTableViewCell.swift */,
 				FR_689591587218 /* EventCell.swift */,
-				FR_665503817914 /* EventTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -203,6 +202,7 @@
 				FR_598083886815 /* AppDelegate.swift */,
 				FR_409928263956 /* Assets.xcassets */,
 				FR_650781316638 /* CalendarViewController.swift */,
+				42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */,
 				FR_236054590453 /* Constants.swift */,
 				FR_129976626392 /* Day.swift */,
 				FR_314925002723 /* Info.plist */,
@@ -312,7 +312,6 @@
 				BF_460376240917 /* EventDataProvider.swift in Sources */,
 				BF_822203216781 /* EventDetailsView.swift in Sources */,
 				BF_910540538205 /* EventSource.swift in Sources */,
-				BF_910027222652 /* EventTableViewCell.swift in Sources */,
 				BF_404617211936 /* EventTimingView.swift in Sources */,
 				BF_707068814845 /* EventViewModel.swift in Sources */,
 				BF_635399764842 /* LocationView.swift in Sources */,
@@ -331,6 +330,7 @@
 				42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */,
 				42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */,
 				428868022071568800F135B9 /* DayTests.swift in Sources */,
+				42C210CD2071FF14008E0E9E /* ForecastAPIClient.swift in Sources */,
 				BF_841295316044 /* OutlookAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

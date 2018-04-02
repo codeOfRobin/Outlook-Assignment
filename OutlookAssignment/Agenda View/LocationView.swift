@@ -20,7 +20,7 @@ class LocationViewController: UIViewController {
 		super.viewDidLoad()
 
 		self.view.addSubview(locationView)
-		locationView.configure(locationName: "sdajfksadjnfksajdnfksajdfnksadjfnksdjnfksdajfnksjdfaksdjfnksdnjfksajdfnkjasdnfksajdnfkasdjfnkasdjnfkjsdanfkjsadnfkjasdnfkjansdakjfnksldfagliyetwhio")
+		locationView.configure(locationName: "Sample Location")
 	}
 
 	override func viewDidLayoutSubviews() {

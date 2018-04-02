@@ -11,7 +11,6 @@ import UIKit
 class EmptyEventsTableViewCell: UITableViewCell {
 
 	let label = UILabel()
-	//TODO: should this be in the cell or in Styles.swift
 	let insets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
 	let stackView = UIStackView()
@@ -23,7 +22,6 @@ class EmptyEventsTableViewCell: UITableViewCell {
 
 		stackView.addArrangedSubview(label)
 
-		//TODO: good place to add constraints?
 		label.numberOfLines = 0
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.alignEdges(to: self.contentView, insets: insets)

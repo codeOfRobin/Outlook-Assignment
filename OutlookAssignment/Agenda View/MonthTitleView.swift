@@ -9,16 +9,18 @@
 import UIKit
 
 class MonthTitleView : UICollectionReusableView {
-	weak var lab : UILabel!
+	weak var label : UILabel!
+
 	override init(frame: CGRect) {
 		super.init(frame:frame)
-		let lab = UILabel(frame:self.bounds)
-		self.addSubview(lab)
-		lab.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		lab.font = UIFont(name: "GillSans-Bold", size: 40)
-		lab.text = "Testing"
-		self.lab = lab
-	}
+		let label = UILabel(frame:self.bounds)
+		self.addSubview(label)
+		label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+		label.font = UIFont(name: "GillSans-Bold", size: 40)
+		label.text = "Testing"
+		self.label = label
+	}	
+
 	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}

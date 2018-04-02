@@ -9,6 +9,7 @@
 import UIKit
 
 extension CGSize {
+	
 	public func centered(in rect: CGRect) -> CGRect {
 		let centeredPoint = CGPoint(x: rect.minX + fabs(rect.width - width) / 2, y: rect.minY + fabs(rect.height - height) / 2)
 		let size = CGSize(width: min(self.width, rect.width), height: min(self.height, rect.height))

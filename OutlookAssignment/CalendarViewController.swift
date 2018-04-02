@@ -14,6 +14,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 	//	#A week is always seven days
 	//	Currently true, but historically false. A couple of out-of-use calendars, like the Decimal calendar and the Egyptian calendar had weeks that were 7, 8, or even 10 days.
+	// http://yourcalendricalfallacyis.com
 	let numberOfColumns: CGFloat = 7
 
 	let generator = UIImpactFeedbackGenerator(style: .light)
@@ -108,10 +109,6 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		layout.minimumLineSpacing = 0.0
 	}
 
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-	}
-
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 
@@ -120,20 +117,26 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		let numberOfRowsToShow: CGFloat = {
 			switch expandedState {
 			case .agenda:
+				// when calendar is contracted - show 2 rows
 				return 2
 			case .calendar:
+				// when calendar is expanded - show 5 rows
 				return 5
 			}
 		}()
 
 		collectionView.frame = CGRect(x: view.safeAreaInsets.left, y: view.safeAreaInsets.top, width: width, height: width / numberOfColumns * numberOfRowsToShow)
-		tableView.frame = CGRect(x: collectionView.frame.minX, y: collectionView.frame.maxY, width: width, height: view.bounds.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - collectionView.frame.height)
+		tableView.frame = CGRect(x: collectionView.frame.minX, y: collectionView.frame.maxY, width: width, height: view.bounds.height - view.safeAreaInsets.top - collectionView.frame.height)
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? DateHeaderView,
 			let date = eventSource.dateFrom(offset: section) else {
-				return nil
+				fatalError("Date beyond bounds of offsets")
 		}
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateStyle = .medium

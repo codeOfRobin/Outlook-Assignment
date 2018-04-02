@@ -18,7 +18,6 @@ func style(from color: UIColor, font: UIFont) -> [NSAttributedStringKey: Any] {
 enum Constants {
 
 	enum Strings {
-		// TODO: Should this be capitalized here? or capitalize later?
 		static let allDay = NSLocalizedString("ALL DAY", comment: "")
 		static let noEvents = NSLocalizedString("No events", comment: "")
 	}

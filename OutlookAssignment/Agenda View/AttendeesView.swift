@@ -74,6 +74,7 @@ class AttendeesView: UIView {
 			switch avatar {
 			case .image(let image):
 				return CircularAvatar(image: image)
+//			Considered adding initials support later on
 //			case .initials(let char1, let char2):
 //				return nil
 			}

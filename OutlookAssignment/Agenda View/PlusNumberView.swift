@@ -9,6 +9,7 @@
 import UIKit
 
 func fontWithMonospacedNumbers(_ font: UIFont) -> UIFont {
+	// https://stackoverflow.com/questions/30854690/how-to-get-monospaced-numbers-in-uilabel-on-ios-9
 	let features = [
 		[
 			UIFontDescriptor.FeatureKey.featureIdentifier: kNumberSpacingType,
@@ -19,6 +20,7 @@ func fontWithMonospacedNumbers(_ font: UIFont) -> UIFont {
 	let fontDescriptor = font.fontDescriptor.addingAttributes(
 		[UIFontDescriptor.AttributeName.featureSettings: features]
 	)
+
 	return UIFont(descriptor: fontDescriptor, size: font.pointSize)
 }
 

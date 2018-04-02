@@ -11,8 +11,9 @@ import UIKit
 
 class EventDetailsView: UIView {
 
-	let presenceView = AttendeesView(frame: .zero)
 	let stackView = UIStackView()
+
+	let presenceView = AttendeesView(frame: .zero)
 	let titleLabel = UILabel()
 	let locationView = LocationView(frame: .zero)
 	let dotView = DotView(frame: .zero)
@@ -25,10 +26,10 @@ class EventDetailsView: UIView {
 		stackView.addArrangedSubview(titleLabel)
 		stackView.addArrangedSubview(presenceView)
 		stackView.addArrangedSubview(locationView)
+
 		presenceView.translatesAutoresizingMaskIntoConstraints = false
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		stackView.translatesAutoresizingMaskIntoConstraints = false
-
 
 		titleLabel.numberOfLines = 0
 

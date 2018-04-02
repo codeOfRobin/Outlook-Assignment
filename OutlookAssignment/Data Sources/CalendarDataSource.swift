@@ -10,11 +10,9 @@ import UIKit
 class CalendarDataSource: NSObject, UICollectionViewDataSource {
 
 	let eventSource: EventSource
-	let dateFormatter = DateFormatter()
 
 	init(eventSource: EventSource) {
 		self.eventSource = eventSource
-		dateFormatter.dateStyle = .short
 	}
 
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -33,7 +31,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
 			let day = eventSource.calendar.component(.day, from: date)
 			let month = eventSource.calendar.component(.month, from: date)
 			let monthName = eventSource.calendar.shortMonthSymbols[month - 1]
-			cell.configure(with: day, month: monthName, isOdd: (month % 2 == 0))
+			cell.configure(with: day, month: monthName, isMonthOdd: (month % 2 == 0))
 		}
 		return cell
 	}

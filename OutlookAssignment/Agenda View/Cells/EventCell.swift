@@ -47,6 +47,7 @@ class EventCell: UITableViewCell {
 	override func layoutSubviews() {
 		super.layoutSubviews()
 	}
+	
 	func configure(with event: EventViewModel) {
 		self.dotView.configure(color: event.eventHighlightColor)
 		self.eventDetailsView.configure(with: event.attendees.map{ $0.avatar }, eventTitle: event.title, eventLocation: event.location)
