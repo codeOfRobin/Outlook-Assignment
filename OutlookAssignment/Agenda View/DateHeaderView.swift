@@ -17,6 +17,8 @@ class DateHeaderView: UITableViewHeaderFooterView {
 
 	override init(reuseIdentifier: String?) {
 		super.init(reuseIdentifier: reuseIdentifier)
+
+		// A value of 0 means no limit on the number of lines
 		titleLabel.numberOfLines = 0
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		self.contentView.addSubview(stackView)

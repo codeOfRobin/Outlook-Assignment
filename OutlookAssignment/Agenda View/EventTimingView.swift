@@ -17,6 +17,7 @@ class EventTimingView: UIView {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
+		// A value of 0 means no limit on the number of lines
 		startingTimeLabel.numberOfLines = 0
 		durationLabel.numberOfLines = 0
 		self.addSubview(startingTimeLabel)

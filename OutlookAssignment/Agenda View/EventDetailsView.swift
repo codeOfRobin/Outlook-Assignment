@@ -31,6 +31,7 @@ class EventDetailsView: UIView {
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 
+		// A value of 0 means no limit on the number of lines
 		titleLabel.numberOfLines = 0
 
 		stackView.spacing = 20.0
@@ -51,10 +52,6 @@ class EventDetailsView: UIView {
 		} else {
 			presenceView.isHidden = true
 		}
-	}
-
-	override func layoutSubviews() {
-		super.layoutSubviews()
 	}
 
 	required init?(coder aDecoder: NSCoder) {

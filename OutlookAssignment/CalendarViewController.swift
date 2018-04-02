@@ -35,7 +35,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 	let tableView = UITableView()
 	let collectionView: UICollectionView
-	let layout = MonthFlowLayout()
+	let layout = UICollectionViewFlowLayout()
 
 	enum ExpandedView {
 		case agenda

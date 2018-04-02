@@ -21,14 +21,13 @@ enum Constants {
 		static let allDay = NSLocalizedString("ALL DAY", comment: "")
 		static let noEvents = NSLocalizedString("No events", comment: "")
 	}
+
+	enum Sizes {
+		static let dotSize: CGFloat = 20.0
+	}
 }
 
 enum Styles {
-
-	enum Sizes {
-		static let gutter: CGFloat = 16.0
-		static let verticalInset: CGFloat = 12.0
-	}
 
 	enum Text {
 		//TODO: should you have `style` at the end

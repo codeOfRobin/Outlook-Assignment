@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		428868022071568800F135B9 /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428868012071568800F135B9 /* DayTests.swift */; };
 		42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42886807207158AA00F135B9 /* ExtensionTests.swift */; };
+		42BACD442072539A0090DE68 /* Date+Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD432072539A0090DE68 /* Date+Seconds.swift */; };
+		42BACD4620725FC60090DE68 /* ForecastClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD4520725FC60090DE68 /* ForecastClientTests.swift */; };
+		42BACD4820726C250090DE68 /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD4720726C250090DE68 /* SampleResponse.swift */; };
+		42BACD4C2072767E0090DE68 /* MockForecastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD4B2072767E0090DE68 /* MockForecastSession.swift */; };
 		42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CA20716494008E0E9E /* DataSourceTests.swift */; };
 		42C210CD2071FF14008E0E9E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */; };
 		BF_133397382201 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_689591587218 /* EventCell.swift */; };
@@ -56,6 +60,10 @@
 /* Begin PBXFileReference section */
 		428868012071568800F135B9 /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
 		42886807207158AA00F135B9 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
+		42BACD432072539A0090DE68 /* Date+Seconds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Seconds.swift"; path = "Forecast Integration/Date+Seconds.swift"; sourceTree = "<group>"; };
+		42BACD4520725FC60090DE68 /* ForecastClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForecastClientTests.swift; path = OutlookAssignmentTests/ForecastClientTests.swift; sourceTree = SOURCE_ROOT; };
+		42BACD4720726C250090DE68 /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
+		42BACD4B2072767E0090DE68 /* MockForecastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastSession.swift; sourceTree = "<group>"; };
 		42C210CA20716494008E0E9E /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForecastAPIClient.swift; path = "Forecast Integration/ForecastAPIClient.swift"; sourceTree = "<group>"; };
 		FR_129976626392 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
@@ -120,6 +128,9 @@
 			children = (
 				428868012071568800F135B9 /* DayTests.swift */,
 				42886807207158AA00F135B9 /* ExtensionTests.swift */,
+				42BACD4520725FC60090DE68 /* ForecastClientTests.swift */,
+				42BACD4B2072767E0090DE68 /* MockForecastSession.swift */,
+				42BACD4720726C250090DE68 /* SampleResponse.swift */,
 				42C210CA20716494008E0E9E /* DataSourceTests.swift */,
 				FR_914264470315 /* Info.plist */,
 				FR_349342137365 /* OutlookAssignmentTests.swift */,
@@ -203,6 +214,7 @@
 				FR_409928263956 /* Assets.xcassets */,
 				FR_650781316638 /* CalendarViewController.swift */,
 				42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */,
+				42BACD432072539A0090DE68 /* Date+Seconds.swift */,
 				FR_236054590453 /* Constants.swift */,
 				FR_129976626392 /* Day.swift */,
 				FR_314925002723 /* Info.plist */,
@@ -314,6 +326,7 @@
 				BF_910540538205 /* EventSource.swift in Sources */,
 				BF_404617211936 /* EventTimingView.swift in Sources */,
 				BF_707068814845 /* EventViewModel.swift in Sources */,
+				42BACD442072539A0090DE68 /* Date+Seconds.swift in Sources */,
 				BF_635399764842 /* LocationView.swift in Sources */,
 				BF_571471824798 /* MonthTitleView.swift in Sources */,
 				BF_351401592110 /* PlusNumberView.swift in Sources */,
@@ -328,10 +341,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */,
+				42BACD4C2072767E0090DE68 /* MockForecastSession.swift in Sources */,
 				42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */,
 				428868022071568800F135B9 /* DayTests.swift in Sources */,
 				42C210CD2071FF14008E0E9E /* ForecastAPIClient.swift in Sources */,
 				BF_841295316044 /* OutlookAssignmentTests.swift in Sources */,
+				42BACD4620725FC60090DE68 /* ForecastClientTests.swift in Sources */,
+				42BACD4820726C250090DE68 /* SampleResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

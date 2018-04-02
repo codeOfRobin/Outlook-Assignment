@@ -22,6 +22,7 @@ class EmptyEventsTableViewCell: UITableViewCell {
 
 		stackView.addArrangedSubview(label)
 
+		// A value of 0 means no limit on the number of lines
 		label.numberOfLines = 0
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.alignEdges(to: self.contentView, insets: insets)
