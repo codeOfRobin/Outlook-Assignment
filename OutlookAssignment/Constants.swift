@@ -50,7 +50,7 @@ enum Styles {
 			static let oslo = "8E8E93"
 			static let mediumDark = "A8A8AC"
 			static let monthText = "9F9FA1"
-			//TODO: BETTER NAMES
+			//TODO: BETTER NAMES for colors. Color anmes should come from the purpose of use, not where they are. Otherwise you may end up in a situation where a designer makes a theme change, and suddenly Colors.blue is actually red 🙃
 		}
 
 		static let selectedCell = "1379D9"

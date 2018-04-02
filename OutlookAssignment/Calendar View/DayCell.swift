@@ -12,6 +12,7 @@ class DayCell: UICollectionViewCell {
 	let dayLabel = UILabel()
 	let monthLabel = UILabel()
 	let stackView = UIStackView()
+	// the view that shows up when you tap on a cell.
 	let highlightedBackgroundView = UIView()
 
 	override var isHighlighted: Bool {
@@ -68,10 +69,12 @@ class DayCell: UICollectionViewCell {
 
 	func configure(with day: Int, month: String?, isMonthOdd: Bool) {
 
+		// Odd and even months have different colors for contrast related reasons
 		self.backgroundColor = isMonthOdd ? .white : Styles.Colors.contrastBackgroundColor.color
 
 		if day == 1 {
 			self.monthLabel.attributedText = NSAttributedString(string: month ?? "", attributes: Styles.Text.MonthTextStyle)
+			// we only show the monthLabel on the first day of the month
 			self.monthLabel.isHidden = false
 		} else {
 			self.monthLabel.isHidden = true

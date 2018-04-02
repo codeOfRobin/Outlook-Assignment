@@ -11,6 +11,7 @@ import UIKit
 class DateHeaderView: UITableViewHeaderFooterView {
 	let titleLabel = UILabel()
 
+	// Insets are kept separately in each view for now. Given a style guide from a designer, I'd like to move them to Styles.swift
 	let titleInsets = UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 16)
 
 	let stackView = UIStackView()

@@ -8,17 +8,17 @@
 
 import UIKit
 
+// This was an experimental class where I was trying to figure out how the "Month overlay" was working - when you drag, the months appear in the calendar view
 class MonthTitleView : UICollectionReusableView {
-	weak var label : UILabel!
+	let label = UILabel()
 
 	override init(frame: CGRect) {
 		super.init(frame:frame)
-		let label = UILabel(frame:self.bounds)
+		label.frame = self.bounds
 		self.addSubview(label)
 		label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-		label.font = UIFont(name: "GillSans-Bold", size: 40)
+		label.font = UIFont.systemFont(ofSize: 40.0)
 		label.text = "Testing"
-		self.label = label
 	}	
 
 	required init?(coder aDecoder: NSCoder) {
@@ -26,6 +26,7 @@ class MonthTitleView : UICollectionReusableView {
 	}
 }
 
+// Custom layout that tries to replicate the "Month Overlay" using decoration views. This does seem to work, but I couldn't quite figure out how it works exactly. Also, Decoration views usually aren't supposed to be associated with data, so maybe they're not the right solution 🤔
 class MonthFlowLayout: UICollectionViewFlowLayout {
 	private let titleKind = "title"
 	private let titleHeight : CGFloat = 20

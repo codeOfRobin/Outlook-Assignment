@@ -10,6 +10,7 @@ import UIKit
 
 extension UIView {
 	func alignEdges(to otherView: UIView, insets: UIEdgeInsets = .zero) {
+		// calling this is more efficient than setting `isActive = true` for individual constraints
 		NSLayoutConstraint.activate([
 			self.topAnchor.constraint(equalTo: otherView.topAnchor, constant: insets.top),
 			self.bottomAnchor.constraint(equalTo: otherView.bottomAnchor, constant: -insets.bottom),

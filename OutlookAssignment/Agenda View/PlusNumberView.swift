@@ -27,19 +27,20 @@ func fontWithMonospacedNumbers(_ font: UIFont) -> UIFont {
 class PlusNumberView: UIView {
 	let label = UILabel()
 
+	// there's a margin above and below the label
 	let xMargin: CGFloat = 6
 	let yMargin: CGFloat = 7
 
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.addSubview(label)
+		// the initial text is to help with sizing the label and figuring out the `intrinsicContentSize`
 		label.attributedText = NSAttributedString(string: "+0", attributes: Styles.Text.PlusNumberStyle)
 		self.backgroundColor = .darkGray
 		self.clipsToBounds = true
 	}
 
 	func configure(with number: Int) {
-
 		self.label.attributedText = NSAttributedString(string: "+\(number)", attributes: Styles.Text.PlusNumberStyle)
 	}
 

@@ -11,6 +11,7 @@ import UIKit
 class EmptyEventsTableViewCell: UITableViewCell {
 
 	let label = UILabel()
+	// Insets are kept separately in each view for now. Given a style guide from a designer, I'd like to move them to Styles.swift
 	let insets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
 
 	let stackView = UIStackView()

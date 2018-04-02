@@ -5,13 +5,18 @@ I'm Robin, and first of all I'd like to thank you for letting me participate in 
 
 # Goals
 
-Our aim in this challenge is to implement the Calendar/Agenda view as seen in the Outlook iOS app. I've tried my best to be faithful to the original design, and I've pointed out places where I've made different choices and added/removed features. There's also places where I've cut-out non essential features, but still try to articulate how I'd implement them if I had the time
+Our aim in this challenge is to implement the Calendar/Agenda view as seen in the Outlook iOS app. I've tried my best to be faithful to the original design, and I've pointed out places where I've made different choices and added/removed features. There's also places where I've cut-out non essential features, but still try to articulate how I'd implement them if I had the time.
 
-# Stuff I've added to the app
+Here's a gif of my app in action: (insert updated app in action)
+
+# Stuff I've improved (I think) in the app
 
 - **Dynamic Type** Almost all the views in the app support dynamic type + expanded content. From the calendar cells to the labels in the agenda view.
-- **Attendees View** now shows as many attendees as possible, not limited to 5 avatars. In addition, this view also scales with dynamic type, using the size of the "+13" label as a reference
-- **Date limits** The dates in the calendar extend to ~5 years before and after the current date
+![Dynamic Type](https://i.imgur.com/907liG0.png)
+- **Attendees View** now shows as many attendees as possible, not limited to 5 avatars. In addition, this view also scales with dynamic type, using the size of the "+\(leftover numbers)" label as a reference.
+![Dynamic Type](https://i.imgur.com/Wkg3jOj.png)
+![gif](https://thumbs.gfycat.com/UnequaledHandsomeAfricanclawedfrog-size_restricted.gif)
+- **Date limits** The dates in the calendar extend to ~1000 days before and after the current date. It's based on a range of offsets, and so it can be extended/contracted as necessary. I did try doing an infinite scroll with pagination, but doing it smoothly is _really_ hard, as evidenced by apps like [Fantastical handling it](https://gfycat.com/MediocreSneakyAlbertosaurus) (notice how they stop scrolling when they need to load in more data).
 - **Feedback Generator** I've added a light impact feedback generator so that scrolling the agenda view feels like scrolling through a UIDatePicker
 
 # Let's look at the app
@@ -45,12 +50,19 @@ For this project we're going to adopt a very standard, no-frills MVC pattern, as
 
 This project suggests using a static data source for events, and we're probably going to need O(1) access for each day's events. So, a dictionary probably makes most sense for us right now
 
-// NOTE: We'll be changing this later, so don't judge my bad choice of types for the dictionary keys please 😜 
-
 ```swift
 // It's a var so we can set events relative to the current day
 var staticEventsDataSet: [Date: [EventViewModel]] = [:]
 
+```
+
+But wait 🚨, there's a problem.
+`Date` is really a misnomer. It doesn't really represent a day in time, but rather an Instance of time. So if you added an event at 12:00 AM and another at 12:01, they'd get different keys in the dictionary 😱.
+
+In order to fix this, we'll split a `Date` into `DateComponents` and hide things like the hour/minute/second behind a struct. (Refer to Day.swift in the project to see how it's implemented). This also lets us use `DateComponents`' `hashValue` property for the dictionary. So now our events look like
+
+```swift
+var staticEventsDataSet: [Day: [EventViewModel]] = [:]
 ```
 
 In the future, we'd probably want to replace these static events with an actual dataSource, such as `EventKit` or possibly a REST API. So it makes to abstact away this information into a protocol for easy decoupling and testability.
@@ -75,25 +87,12 @@ I'm not considering an event that extend across multiple days (say an event that
 
 # Views
 
-I've made efforts to make sure all of the views work well with dynamic height + locales. Most `UILabel`s support multiple lines of content where necessary, and content generally adapts for accessibility reasons
+I've made efforts to make sure all of the views work well with dynamic height + locales. Most `UILabel`s support multiple lines of content where necessary, and content generally adapts for accessibility reasons.
 
-## Date Header View
+Most views have a `configure` method, that takes in a presentation model, and configures the view accordingly. Given more time, these would be a prime target for unit testing (similar to [Githawk's implementation](https://github.com/GitHawkApp/GitHawk/blob/master/FreetimeTests/IssueLabelCellTests.swift) ) since our views have multiple states/configurations where subviews are hidden/shown depending on the presentation model's properties.
 
-This is the table view header. It shows the relevant day in a `.medium` date style. For this view, I've omitted the tiny touch where today's date is highlighted in blue
 
-## Event Timing View
 
-![Event TimingView](./Assets/EventTimingView/)
-
-This view is responsible for displaying the time of an event. 
-
-## Event Details View
-
-This view combines the event title, a view with the Attendees' avatars and a view for the event location in a UIStackView.
-
-## Attendees View
-
-This view shows the avatars of the event Attendees. If it can't fit in all the possible avatars, shows another view that shows the number of leftover avatars. Like other views, it also scales with dynamic type (it does so by measuring the height of the `PlusNumberView`
 
 
 

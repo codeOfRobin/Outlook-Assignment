@@ -15,6 +15,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
 		self.eventSource = eventSource
 	}
 
+	// There's only one section, and this lets us leverage UICollectionViewFlowLayout so that new months start on the same line
 	func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return 1
 	}
@@ -25,7 +26,8 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? DayCell else {
-			return UICollectionViewCell()
+			// a fatalError() would _probably_ be a better option here, because you probably have done something heinously wrong if your cells aren't dequeuing 🙃
+			fatalError("Cell not created for Calendar View")
 		}
 		if let date = eventSource.dateFrom(offset: indexPath.row) {
 			let day = eventSource.calendar.component(.day, from: date)

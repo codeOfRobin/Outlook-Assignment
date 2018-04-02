@@ -13,7 +13,9 @@ class EventDetailsView: UIView {
 
 	let stackView = UIStackView()
 
+	// Shows avatars of the people attending the event
 	let presenceView = AttendeesView(frame: .zero)
+	// Shows event title. No longer restricted to 2 lines 🎉
 	let titleLabel = UILabel()
 	let locationView = LocationView(frame: .zero)
 	let dotView = DotView(frame: .zero)

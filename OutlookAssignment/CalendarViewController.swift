@@ -70,6 +70,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		headerDateFormatter.dateStyle = .medium
 
 		let (firstDate, lastDate) = eventSource.dateRange
+		// Load data from provider and reload section
 		eventDataProvider.loadEvents(from: firstDate, to: lastDate) { [weak self] (results) in
 			guard let strongSelf = self else {
 				return
@@ -100,13 +101,19 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		collectionView.register(DayCell.self, forCellWithReuseIdentifier: "cell")
 		collectionView.backgroundColor = .white
 
-		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 		view.backgroundColor = .white
 		view.addSubview(tableView)
 		view.addSubview(collectionView)
 
 		layout.minimumInteritemSpacing = 0.0
 		layout.minimumLineSpacing = 0.0
+	}
+
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+
+		// scroll to offset:0 , i.e. today
+		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -140,6 +147,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		}
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateStyle = .medium
+		// need to highlight today with a blue highlight
 		let isToday = eventSource.isDateSameDayAsToday(date)
 		header.configure(title: headerDateFormatter.string(from: date), shouldHighlight: isToday)
 		return header
@@ -190,6 +198,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		if indexPath.row % 7 == 0 {
+			// Need to to do this because setting the cell width to _exactly_ 1/7th
 			let leftOverWidth =  collectionView.bounds.width - floor(collectionView.frame.width/numberOfColumns) * 6
 			let size = CGSize(width: leftOverWidth, height: floor(collectionView.frame.width/numberOfColumns))
 			return size

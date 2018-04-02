@@ -29,6 +29,7 @@ class CircularAvatar: UIImageView {
 	}
 
 	override func sizeThatFits(_ size: CGSize) -> CGSize {
+		// will default to fill the size it's given
 		let edge = min(size.width, size.height)
 		return CGSize(width: edge, height: edge)
 	}

@@ -13,9 +13,10 @@ class EventSource {
 	var today = Date()
 
 	var calendar = Calendar(identifier: .gregorian)
-	var offsets = -10000...10000
+	var offsets = -1000...1000
 
 	init() {
+		// Not setting this causes the month names to be M01, M02, M03.....etc
 		calendar.locale = Locale.current
 	}
 
