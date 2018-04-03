@@ -24,6 +24,7 @@ After building once, the missing file(Credentials.generated.swift should be auto
 Our aim in this challenge is to implement the Calendar/Agenda view as seen in the Outlook iOS app. I've tried my best to be faithful to the original design, and I've pointed out places where I've made different choices and added/removed features. There's also places where I've cut-out non essential features, but still try to articulate how I'd implement them if I had the time.
 
 Here's a gif of the app in action:
+
 ![gif](https://thumbs.gfycat.com/BossyPointlessCrownofthornsstarfish-size_restricted.gif)
 
 # Stuff I've improved
