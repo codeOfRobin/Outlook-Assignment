@@ -2,6 +2,11 @@
 
 I'm Robin, and first of all I'd like to thank you for letting me participate in your iOS engineer challenge. It's been a lot of fun, and honestly I've learned a lot.
 
+## A little about me
+
+Hi 👋 ! I'm Robin.
+My love affair with computers started with my dad's hand-me-down IBM PC. I'm a huge swift fan (both  and Taylor), and I like to spend my free time playing Basketball and working on Open Source. When I'm not coding or wasting time on Reddit, I usually wind down with a nice game of Overwatch or NBA 2k 🎮
+
 # Installation instructions
 
 Committing your API keys to a git repo is usually a really bad idea, and so I'm using code generation to allow us to supply our own API keys ([more info on my technique here](https://medium.com/flawless-app-stories/secret-variables-in-xcode-and-your-ci-for-fun-and-profit-d387a50475d7) )
