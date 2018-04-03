@@ -2,6 +2,18 @@
 
 I'm Robin, and first of all I'd like to thank you for letting me participate in your iOS engineer challenge. It's been a lot of fun, and honestly I've learned a lot.
 
+# Installation instructions
+
+Committing your API keys to a git repo is usually a really bad idea, and so I'm using code generation to allow us to supply our own API keys ([more info on my technique here](https://medium.com/flawless-app-stories/secret-variables-in-xcode-and-your-ci-for-fun-and-profit-d387a50475d7) )
+
+In order to pass in your own API keys, create a file `env-vars.sh` with the following content at the project directory.
+
+```bash
+export API_KEY=<YOUR API KEY HERE>
+```
+
+After building once, the missing file(Credentials.generated.swift should be automatically added to your project). Don't hesitate to contact me if you need help setting up 😅
+
 # Goals
 
 Our aim in this challenge is to implement the Calendar/Agenda view as seen in the Outlook iOS app. I've tried my best to be faithful to the original design, and I've pointed out places where I've made different choices and added/removed features. There's also places where I've cut-out non essential features, but still try to articulate how I'd implement them if I had the time.
@@ -98,6 +110,7 @@ Most views have a `configure` method, that takes in a presentation model, and co
 # Things I missed out/want to improve
 
 - Tests for the UITableViewCell bindings.
+- There's some transient broken constraints initially (for some reason UITableViewCellContentView is constrained to be 0 width)
 - Scrolling quickly in the `UITableView` has a delay scrolling to the right place in the `UICollectionView`. I tried using `layoutAttributes` to get the correct offsets in the collectionView, but that didn't work quite well either.
 - I would love to figure out how the "Month Overlay" works (when you start dragging on the calendar view, it shows the months while blurring out the actual calendar). My first theory involved using decoration views(and there's a couple of classes in my project trying to use those), but decoration views in general aren't supposed to depend on data, so I'm not sure how'd it work
 - Infinite scrolling would be a nice addition, but it's also kind of a pain to implement ('s calendar app seems to work on black magic for all I know, and even fantastical's implementation seems sub par since it pauses the user scrolling to load new content)
