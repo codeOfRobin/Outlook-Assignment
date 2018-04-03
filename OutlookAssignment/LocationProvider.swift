@@ -39,8 +39,11 @@ class LocationWeatherProvider: NSObject, CLLocationManagerDelegate {
 				request.cancel()
 			}
 			let point = Point.init(latitude: lastLocation.coordinate.latitude, longitude: lastLocation.coordinate.longitude)
-			self.currentRequest =  forecastAPIClient.getWeather(for: point, completion: { [weak self] (forecast) in
-				self?.delegate?.weatherDidUpdate(forecast)
+			self.currentRequest =  forecastAPIClient.getWeather(for: point, completion: { [weak self] (result) in
+				if case .success(let forecast) = result {
+					self?.delegate?.weatherDidUpdate(forecast)
+				}
+				// in the event of a failure, the title bar remains blank, which is a good enough compromise IMO
 				self?.currentRequest = nil
 			})
 		}
