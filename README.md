@@ -38,6 +38,7 @@ Here's a gif of the app in action:
 - **Under 250 lines of code** Classes are decoupled for easy testability, and are generally single purpose and small.
 - **Forecast API** my Forecast API is well tested, and uses 's new `Codable` protocol for all operations
 - **Tapping on the status bar** takes you to the current date.
+
 ![status bar](https://thumbs.gfycat.com/PaltryPoorEquestrian-size_restricted.gif)
 
 # Let's look at the app
