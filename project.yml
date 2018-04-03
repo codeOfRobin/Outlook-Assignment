@@ -6,6 +6,9 @@ targets:
     type: application
     platform: [iOS]
     sources: OutlookAssignment
+    prebuildScripts:
+      - path: ./env-script.sh
+        name: environment initializer(make sure you set $API_KEY to your Forecast API Key
     scheme:
       gatherCoverageData: true
       testTargets:

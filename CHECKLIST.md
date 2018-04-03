@@ -17,12 +17,12 @@
 
 ## Primitives
 
-- [ ] Date Cell for calendar collection views
-	- [ ] Odd Months - don't forget to unit test the logic for "odd"/"even" months
+- [x] Date Cell for calendar collection views
+	- x ] Odd Months - don't forget to unit test the logic for "odd"/"even" months
 	- [x] Don't forget to use SF Monospace numbers!
 	- [x] Remove all hardcoded strings and constants
-	- [ ] Even Months
-	- [ ] Start of month (Need to have month's name) - unit test (Model -> Presenter) logic
+	- [x] Even Months
+	- [x] Start of month (Need to have month's name) - unit test (Model -> Presenter) logic
 	- [ ] event marker
 
 - [x] Table View Cell for Event Views
@@ -43,10 +43,10 @@
 ## Bonus points
 
 - [x] DateHeaderView blue highlights
-- [ ] Forecast.io API integrationForecast.io
-	- [ ] Don't forget to make sure NSURLSession calls back in the correct thread 
-	- [ ] Add tests for network API calls - mock URLsession object should do the trick
-	- [ ] Decode service API with Codable protocol
+- [x] Forecast.io API integrationForecast.io
+	- [x] Don't forget to make sure NSURLSession calls back in the correct thread 
+	- [x] Add tests for network API calls - mock URLsession object should do the trick
+	- [x] Decode service API with Codable protocol
 - [ ] Add view to show weather inside table view
 	- [ ] Showing multiple loaders in each day? 🤔
 	- [ ] See if forecast lets you get multiple days

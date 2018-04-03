@@ -92,6 +92,7 @@ Most views have a `configure` method, that takes in a presentation model, and co
 
 # Things I missed out/want to improve
 
+- Better colors for the `DotView` 😛.
 - Tests for my UITableViewCell bindings.
 - Scrolling quickly in the `UITableView` has a delay scrolling to the right place in the `UICollectionView`. I tried using `layoutAttributes` to get the correct offsets in the collectionView, but that didn't work quite well either.
 - I would love to figure out how the "Month Overlay" works (when you start dragging on the calendar view, it shows the months while blurring out the actual calendar). My first theory involved using decoration views(and there's a couple of classes in my project trying to use those), but decoration views in general aren't supposed to depend on data, so I'm not sure how'd it work

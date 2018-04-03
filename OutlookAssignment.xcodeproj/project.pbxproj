@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		428868022071568800F135B9 /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428868012071568800F135B9 /* DayTests.swift */; };
-		42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42886807207158AA00F135B9 /* ExtensionTests.swift */; };
-		42BACD442072539A0090DE68 /* Date+Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD432072539A0090DE68 /* Date+Seconds.swift */; };
-		42BACD4620725FC60090DE68 /* ForecastClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD4520725FC60090DE68 /* ForecastClientTests.swift */; };
-		42BACD4820726C250090DE68 /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD4720726C250090DE68 /* SampleResponse.swift */; };
-		42BACD4C2072767E0090DE68 /* MockForecastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BACD4B2072767E0090DE68 /* MockForecastSession.swift */; };
-		42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CA20716494008E0E9E /* DataSourceTests.swift */; };
-		42C210CD2071FF14008E0E9E /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */; };
 		BF_133397382201 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_689591587218 /* EventCell.swift */; };
+		BF_185515799826 /* MockForecastSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_657164221537 /* MockForecastSession.swift */; };
 		BF_201106544672 /* DateHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_911382929871 /* DateHeaderView.swift */; };
 		BF_246440345540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_598083886815 /* AppDelegate.swift */; };
+		BF_293540940929 /* ForecastAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_616732061574 /* ForecastAPIClient.swift */; };
 		BF_351401592110 /* PlusNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_408772440639 /* PlusNumberView.swift */; };
 		BF_352088762575 /* AttendeesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_642225800371 /* AttendeesView.swift */; };
 		BF_353932559249 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_618149985773 /* UIColor+Hex.swift */; };
+		BF_371554432736 = {isa = PBXBuildFile; fileRef = FR_232594268034 /* OutlookAssignment.app */; };
+		BF_375492529347 = {isa = PBXBuildFile; fileRef = FR_518012577638 /* OutlookAssignmentTests.xctest */; };
 		BF_377049340755 /* AgendaDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_381480004977 /* AgendaDataSource.swift */; };
 		BF_404617211936 /* EventTimingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_427279115807 /* EventTimingView.swift */; };
+		BF_425651285455 /* Date+Seconds.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_712332346482 /* Date+Seconds.swift */; };
+		BF_426034497398 /* SampleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_237732517851 /* SampleResponse.swift */; };
+		BF_445032654514 /* ForecastClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_155906815090 /* ForecastClientTests.swift */; };
 		BF_460376240917 /* EventDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_499962432609 /* EventDataProvider.swift */; };
+		BF_488476086061 /* DayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_262018014554 /* DayTests.swift */; };
 		BF_489203749641 /* CalendarDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_226640608260 /* CalendarDataSource.swift */; };
 		BF_500797084898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = VG_379966967669 /* LaunchScreen.storyboard */; };
 		BF_504108947674 /* CircularAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_898721149945 /* CircularAvatar.swift */; };
@@ -33,7 +33,10 @@
 		BF_571471824798 /* MonthTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_669041959677 /* MonthTitleView.swift */; };
 		BF_574880598792 /* UIView+alignEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_281895916180 /* UIView+alignEdges.swift */; };
 		BF_621771586145 /* DotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_752573872441 /* DotView.swift */; };
+		BF_627082462341 /* ExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_306086321600 /* ExtensionTests.swift */; };
 		BF_635399764842 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_389537625973 /* LocationView.swift */; };
+		BF_640016033913 /* DataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_110811417383 /* DataSourceTests.swift */; };
+		BF_652308023015 /* Credentials.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_656984924806 /* Credentials.generated.swift */; };
 		BF_668220930294 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_129976626392 /* Day.swift */; };
 		BF_670999139963 /* StaticEventsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_762469995347 /* StaticEventsDataProvider.swift */; };
 		BF_673544012464 /* CGRect + Centering.swift in Sources */ = {isa = PBXBuildFile; fileRef = FR_370506073279 /* CGRect + Centering.swift */; };
@@ -48,29 +51,26 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		42886805207156E200F135B9 /* PBXContainerItemProxy */ = {
+		CIP_51801257763 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = P_9058474000714 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = NT_232594268034;
-			remoteInfo = OutlookAssignment_iOS;
+			remoteGlobalIDString = NT_518012577638;
+			remoteInfo = OutlookAssignmentTests_iOS;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		428868012071568800F135B9 /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
-		42886807207158AA00F135B9 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
-		42BACD432072539A0090DE68 /* Date+Seconds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Date+Seconds.swift"; path = "Forecast Integration/Date+Seconds.swift"; sourceTree = "<group>"; };
-		42BACD4520725FC60090DE68 /* ForecastClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForecastClientTests.swift; path = OutlookAssignmentTests/ForecastClientTests.swift; sourceTree = SOURCE_ROOT; };
-		42BACD4720726C250090DE68 /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
-		42BACD4B2072767E0090DE68 /* MockForecastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastSession.swift; sourceTree = "<group>"; };
-		42C210CA20716494008E0E9E /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
-		42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForecastAPIClient.swift; path = "Forecast Integration/ForecastAPIClient.swift"; sourceTree = "<group>"; };
+		FR_110811417383 /* DataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceTests.swift; sourceTree = "<group>"; };
 		FR_129976626392 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		FR_155906815090 /* ForecastClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastClientTests.swift; sourceTree = "<group>"; };
 		FR_226640608260 /* CalendarDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		FR_232594268034 /* OutlookAssignment.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OutlookAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_236054590453 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FR_237732517851 /* SampleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleResponse.swift; sourceTree = "<group>"; };
+		FR_262018014554 /* DayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTests.swift; sourceTree = "<group>"; };
 		FR_281895916180 /* UIView+alignEdges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+alignEdges.swift"; sourceTree = "<group>"; };
+		FR_306086321600 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		FR_314925002723 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FR_349342137365 /* OutlookAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlookAssignmentTests.swift; sourceTree = "<group>"; };
 		FR_370506073279 /* CGRect + Centering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGRect + Centering.swift"; sourceTree = "<group>"; };
@@ -83,15 +83,19 @@
 		FR_468679413091 /* EventSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSource.swift; sourceTree = "<group>"; };
 		FR_499962432609 /* EventDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataProvider.swift; sourceTree = "<group>"; };
 		FR_512129741381 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
-		FR_518012577638 /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FR_518012577638 /* OutlookAssignmentTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OutlookAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FR_598083886815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FR_616732061574 /* ForecastAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastAPIClient.swift; sourceTree = "<group>"; };
 		FR_618149985773 /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 		FR_642225800371 /* AttendeesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesView.swift; sourceTree = "<group>"; };
 		FR_644470534573 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		FR_650781316638 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		FR_656984924806 /* Credentials.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.generated.swift; sourceTree = "<group>"; };
+		FR_657164221537 /* MockForecastSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastSession.swift; sourceTree = "<group>"; };
 		FR_669041959677 /* MonthTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthTitleView.swift; sourceTree = "<group>"; };
 		FR_678487493343 /* Collection+ElementAtIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+ElementAtIndex.swift"; sourceTree = "<group>"; };
 		FR_689591587218 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		FR_712332346482 /* Date+Seconds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Seconds.swift"; sourceTree = "<group>"; };
 		FR_752573872441 /* DotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotView.swift; sourceTree = "<group>"; };
 		FR_762469995347 /* StaticEventsDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticEventsDataProvider.swift; sourceTree = "<group>"; };
 		FR_819794136458 /* Attendee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attendee.swift; sourceTree = "<group>"; };
@@ -123,17 +127,27 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
+		G_4396412554293 /* Forecast Integration */ = {
+			isa = PBXGroup;
+			children = (
+				FR_656984924806 /* Credentials.generated.swift */,
+				FR_712332346482 /* Date+Seconds.swift */,
+				FR_616732061574 /* ForecastAPIClient.swift */,
+			);
+			path = "Forecast Integration";
+			sourceTree = "<group>";
+		};
 		G_6945233680929 /* OutlookAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
-				428868012071568800F135B9 /* DayTests.swift */,
-				42886807207158AA00F135B9 /* ExtensionTests.swift */,
-				42BACD4520725FC60090DE68 /* ForecastClientTests.swift */,
-				42BACD4B2072767E0090DE68 /* MockForecastSession.swift */,
-				42BACD4720726C250090DE68 /* SampleResponse.swift */,
-				42C210CA20716494008E0E9E /* DataSourceTests.swift */,
+				FR_110811417383 /* DataSourceTests.swift */,
+				FR_262018014554 /* DayTests.swift */,
+				FR_306086321600 /* ExtensionTests.swift */,
+				FR_155906815090 /* ForecastClientTests.swift */,
 				FR_914264470315 /* Info.plist */,
+				FR_657164221537 /* MockForecastSession.swift */,
 				FR_349342137365 /* OutlookAssignmentTests.swift */,
+				FR_237732517851 /* SampleResponse.swift */,
 			);
 			path = OutlookAssignmentTests;
 			sourceTree = "<group>";
@@ -141,10 +155,10 @@
 		G_6961054579414 /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FR_468679413091 /* EventSource.swift */,
 				FR_381480004977 /* AgendaDataSource.swift */,
 				FR_226640608260 /* CalendarDataSource.swift */,
 				FR_499962432609 /* EventDataProvider.swift */,
+				FR_468679413091 /* EventSource.swift */,
 				FR_762469995347 /* StaticEventsDataProvider.swift */,
 			);
 			path = "Data Sources";
@@ -209,12 +223,11 @@
 				G_7007031299588 /* Calendar View */,
 				G_6961054579414 /* Data Sources */,
 				G_2450873997180 /* Extensions */,
+				G_4396412554293 /* Forecast Integration */,
 				G_4341789877856 /* View Models */,
 				FR_598083886815 /* AppDelegate.swift */,
 				FR_409928263956 /* Assets.xcassets */,
 				FR_650781316638 /* CalendarViewController.swift */,
-				42C210CC2071FF14008E0E9E /* ForecastAPIClient.swift */,
-				42BACD432072539A0090DE68 /* Date+Seconds.swift */,
 				FR_236054590453 /* Constants.swift */,
 				FR_129976626392 /* Day.swift */,
 				FR_314925002723 /* Info.plist */,
@@ -230,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CL_232594268034 /* Build configuration list for PBXNativeTarget "OutlookAssignment_iOS" */;
 			buildPhases = (
+				SSBP_6934011546 /* environment initializer(make sure you set $API_KEY to your Forecast API Key */,
 				SBP_23259426803 /* Sources */,
 				RBP_23259426803 /* Resources */,
 			);
@@ -251,7 +265,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				42886806207156E200F135B9 /* PBXTargetDependency */,
+				TD_871282698976 /* PBXTargetDependency */,
 			);
 			name = OutlookAssignmentTests_iOS;
 			productName = OutlookAssignmentTests_iOS;
@@ -265,11 +279,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
-				TargetAttributes = {
-					NT_518012577638 = {
-						TestTargetID = NT_232594268034;
-					};
-				};
 			};
 			buildConfigurationList = CL_905847400071 /* Build configuration list for PBXProject "OutlookAssignment" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -300,6 +309,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		SSBP_6934011546 /* environment initializer(make sure you set $API_KEY to your Forecast API Key */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "environment initializer(make sure you set $API_KEY to your Forecast API Key";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f ./env-vars.sh ]\nthen\nsource ./env-vars.sh\nfi\n#no `else` case needed if the CI works as expected\nsourcery --templates ./Templates --sources ./OutlookAssignment --output ./OutlookAssignment/Forecast\\ Integration/ --args apiKey=$API_KEY";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		SBP_23259426803 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -315,6 +342,8 @@
 				BF_504108947674 /* CircularAvatar.swift in Sources */,
 				BF_686639947104 /* Collection+ElementAtIndex.swift in Sources */,
 				BF_826385771561 /* Constants.swift in Sources */,
+				BF_652308023015 /* Credentials.generated.swift in Sources */,
+				BF_425651285455 /* Date+Seconds.swift in Sources */,
 				BF_201106544672 /* DateHeaderView.swift in Sources */,
 				BF_668220930294 /* Day.swift in Sources */,
 				BF_515726803494 /* DayCell.swift in Sources */,
@@ -326,7 +355,7 @@
 				BF_910540538205 /* EventSource.swift in Sources */,
 				BF_404617211936 /* EventTimingView.swift in Sources */,
 				BF_707068814845 /* EventViewModel.swift in Sources */,
-				42BACD442072539A0090DE68 /* Date+Seconds.swift in Sources */,
+				BF_293540940929 /* ForecastAPIClient.swift in Sources */,
 				BF_635399764842 /* LocationView.swift in Sources */,
 				BF_571471824798 /* MonthTitleView.swift in Sources */,
 				BF_351401592110 /* PlusNumberView.swift in Sources */,
@@ -340,24 +369,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42C210CB20716494008E0E9E /* DataSourceTests.swift in Sources */,
-				42BACD4C2072767E0090DE68 /* MockForecastSession.swift in Sources */,
-				42886808207158AA00F135B9 /* ExtensionTests.swift in Sources */,
-				428868022071568800F135B9 /* DayTests.swift in Sources */,
-				42C210CD2071FF14008E0E9E /* ForecastAPIClient.swift in Sources */,
+				BF_640016033913 /* DataSourceTests.swift in Sources */,
+				BF_488476086061 /* DayTests.swift in Sources */,
+				BF_627082462341 /* ExtensionTests.swift in Sources */,
+				BF_445032654514 /* ForecastClientTests.swift in Sources */,
+				BF_185515799826 /* MockForecastSession.swift in Sources */,
 				BF_841295316044 /* OutlookAssignmentTests.swift in Sources */,
-				42BACD4620725FC60090DE68 /* ForecastClientTests.swift in Sources */,
-				42BACD4820726C250090DE68 /* SampleResponse.swift in Sources */,
+				BF_426034497398 /* SampleResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		42886806207156E200F135B9 /* PBXTargetDependency */ = {
+		TD_871282698976 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = NT_232594268034 /* OutlookAssignment_iOS */;
-			targetProxy = 42886805207156E200F135B9 /* PBXContainerItemProxy */;
+			target = NT_518012577638 /* OutlookAssignmentTests_iOS */;
+			targetProxy = CIP_51801257763 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -469,7 +497,6 @@
 				PRODUCT_NAME = OutlookAssignmentTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
 			};
 			name = Release;
 		};
@@ -483,7 +510,6 @@
 				PRODUCT_NAME = OutlookAssignmentTests;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OutlookAssignment.app/OutlookAssignment";
 			};
 			name = Debug;
 		};
