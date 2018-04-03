@@ -116,26 +116,45 @@ class ForecastAPIClient {
 	let session: URLSession
 	let requestBuilder: ForecastRequestBuilder
 
+	enum WeatherForecastError: Error {
+		// add other error cases here
+		case dataIsNil
+	}
+
 	init(session: URLSession, key: String) {
 		self.session = session
 		self.key = key
 		self.requestBuilder = ForecastRequestBuilder(apiKey: key)
 	}
 
-	func getWeather(for point: Point, completion: @escaping (WeatherForecast) -> Void) -> URLSessionDataTask {
+	func getWeather(for point: Point, completion: @escaping (Result<WeatherForecast>) -> Void) -> URLSessionDataTask {
 		let request = requestBuilder.request(for: .currentForecast(point))
 		let dataTask = session.dataTask(with: request!) { (data, response, error) in
 			guard (error as NSError?)?.code != -999 else {
 				return
 			}
+			if let error = error {
+				DispatchQueue.main.sync {
+					completion(.failure(error))
+				}
+				return
+			}
 			let jsonDecoder = JSONDecoder()
 			do {
-				let weatherResponse = try jsonDecoder.decode(ForecastResponse.self, from: data!)
+				guard let data = data else {
+					DispatchQueue.main.sync {
+						completion(.failure(WeatherForecastError.dataIsNil))
+					}
+					return
+				}
+				let weatherResponse = try jsonDecoder.decode(ForecastResponse.self, from: data)
 				DispatchQueue.main.async {
-					completion(weatherResponse.currentForecast)
+					completion(.success(weatherResponse.currentForecast))
 				}
 			} catch {
-
+				DispatchQueue.main.async {
+					completion(.failure(error))
+				}
 			}
 		}
 		dataTask.resume()
