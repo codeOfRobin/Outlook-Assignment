@@ -33,7 +33,7 @@ Let's divide the screen into two parts - the "Calendar" view "Agenda" view. Here
 
 In addition, dragging on either view causes the other view to collapse with an animation
 
-# Styling
+## Styling
 
 In order to figure out things like margins, cell sizes etc, I tried overlaying rectangles on top of screenshots (Check out the "Outlook Mobile screens for reference" sketch file in the repo). Also I used [Sip](http://sipapp.io) to grab colors for use in the app.
 
@@ -41,11 +41,11 @@ For things like text sizes, I'm a heavy supporter of Dynamic type (the current O
 
 To structure this in code, I took inspiration from [Githawk](https://github.com/GitHawkApp/GitHawk), where all the styles are represented as [static properties in an enum](https://github.com/GitHawkApp/GitHawk/blob/master/Classes/Views/Styles.swift). This has 2 benefits - static properties are lazily evaluated and cached, and allows for easier namespacing too 🎉.
 
-# Architecture
+## Architecture
 
 For this project we're going to adopt a very standard, no-frills MVC pattern, as [Dave Delong](https://davedelong.com/blog/2017/11/06/a-better-mvc-part-1-the-problems/) intended. We'll try our best to keep things as testable as possible while staying true to the platform.
 
-# Model
+### Model
 
 This project suggests using a static data source for events, and we're probably going to need O(1) access for each day's events. So, a dictionary probably makes most sense for us right now
 
@@ -75,7 +75,7 @@ protocol EventDataProvider {
 and for our static data source, we can simply create an array of `(Date, [EventViewModel])` tuples and return these. Refer to `StaticEventsDataProvider.swift` for the implementation
 
 
-## Events(Presentation Model)
+### Events(Presentation Model)
 
 Note: I'm taking my definition of "Presentation Model" from Ben Sandofsky's [post](https://medium.com/@sandofsky/the-presentation-model-6aeaaab607a0). In other contexts, people sometimes refer to these as "View Model"s
 
@@ -84,7 +84,7 @@ By themselves, `EventViewModel`s are simply their titles, timing (either All-Day
 I'm not considering an event that extend across multiple days (say an event that starts today and ends tomorrow), since this is just a ViewModel. In the real world, that event would probably be deconstructed into 2 view models, one for each day it stretches across.
 
 
-# Views
+### Views
 
 I've made efforts to make sure all of the views work well with dynamic height + locales. Most `UILabel`s support multiple lines of content where necessary, and content generally adapts for accessibility reasons.
 
