@@ -8,31 +8,6 @@
 
 import UIKit
 
-class LocationViewController: UIViewController {
-
-	let locationView = LocationView(frame: .zero)
-
-	init() {
-		super.init(nibName: nil, bundle: nil)
-	}
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-
-		self.view.addSubview(locationView)
-		locationView.configure(locationName: "sdajfksadjnfksajdnfksajdfnksadjfnksdjnfksdajfnksjdfaksdjfnksdnjfksajdfnkjasdnfksajdnfkasdjfnkasdjnfkjsdanfkjsadnfkjasdnfkjansdakjfnksldfagliyetwhio")
-	}
-
-	override func viewDidLayoutSubviews() {
-		super.viewDidLayoutSubviews()
-		locationView.frame = locationView.intrinsicContentSize.centeredVertically(in: self.view.bounds)
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-}
-
 class LocationView: UIView {
 	let label = UILabel()
 	let image = UIImageView()
@@ -66,6 +41,7 @@ class LocationView: UIView {
 	}
 
 	override func sizeThatFits(_ size: CGSize) -> CGSize {
+		// We'd like to scale the image height along with the label for consistency
 		let labelSize = label.sizeThatFits(CGSize(width: size.width, height: size.height))
 		let imageEdge = labelSize.height
 		return CGSize(width: imageEdge + margin + labelSize.width, height: imageEdge)

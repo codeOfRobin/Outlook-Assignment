@@ -8,12 +8,14 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CalendarViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, WeatherUpdatesDelegate {
 
 	let eventDataProvider: EventDataProvider
+	let locationWeatherProvider: LocationWeatherProvider
 
 	//	#A week is always seven days
 	//	Currently true, but historically false. A couple of out-of-use calendars, like the Decimal calendar and the Egyptian calendar had weeks that were 7, 8, or even 10 days.
+	// http://yourcalendricalfallacyis.com
 	let numberOfColumns: CGFloat = 7
 
 	let generator = UIImpactFeedbackGenerator(style: .light)
@@ -34,7 +36,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 	let tableView = UITableView()
 	let collectionView: UICollectionView
-	let layout = MonthFlowLayout()
+	let layout = UICollectionViewFlowLayout()
 
 	enum ExpandedView {
 		case agenda
@@ -47,7 +49,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 	let agendaDataSource: AgendaDataSource
 	let calendarDataSource: CalendarDataSource
 
-	init(dataProvider: EventDataProvider) {
+	init(dataProvider: EventDataProvider, session: URLSession = .shared, apiKey: String = Credentials.testCreds.apiKey) {
 		self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		// not sure if this is the best way to go to the middle
 		self.indexPathOfHighlightedCell = IndexPath(row: 0, section: eventSource.offsets.count/2)
@@ -56,6 +58,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		self.calendarDataSource = CalendarDataSource(eventSource: eventSource)
 
 		self.eventDataProvider = dataProvider
+		let forecastClient = ForecastAPIClient(session: session, key: apiKey)
+		self.locationWeatherProvider = LocationWeatherProvider(forecastClient: forecastClient)
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -69,6 +73,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		headerDateFormatter.dateStyle = .medium
 
 		let (firstDate, lastDate) = eventSource.dateRange
+		// Load data from provider and reload section
 		eventDataProvider.loadEvents(from: firstDate, to: lastDate) { [weak self] (results) in
 			guard let strongSelf = self else {
 				return
@@ -99,13 +104,18 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		collectionView.register(DayCell.self, forCellWithReuseIdentifier: "cell")
 		collectionView.backgroundColor = .white
 
-		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 		view.backgroundColor = .white
 		view.addSubview(tableView)
 		view.addSubview(collectionView)
 
 		layout.minimumInteritemSpacing = 0.0
 		layout.minimumLineSpacing = 0.0
+
+		locationWeatherProvider.delegate = self
+		locationWeatherProvider.start()
+
+		// scroll to offset:0 , i.e. today
+		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
@@ -120,23 +130,30 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		let numberOfRowsToShow: CGFloat = {
 			switch expandedState {
 			case .agenda:
+				// when calendar is contracted - show 2 rows
 				return 2
 			case .calendar:
+				// when calendar is expanded - show 5 rows
 				return 5
 			}
 		}()
 
 		collectionView.frame = CGRect(x: view.safeAreaInsets.left, y: view.safeAreaInsets.top, width: width, height: width / numberOfColumns * numberOfRowsToShow)
-		tableView.frame = CGRect(x: collectionView.frame.minX, y: collectionView.frame.maxY, width: width, height: view.bounds.height - view.safeAreaInsets.top - view.safeAreaInsets.bottom - collectionView.frame.height)
+		tableView.frame = CGRect(x: collectionView.frame.minX, y: collectionView.frame.maxY, width: width, height: view.bounds.height - view.safeAreaInsets.top - collectionView.frame.height)
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
 	}
 
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header") as? DateHeaderView,
 			let date = eventSource.dateFrom(offset: section) else {
-				return nil
+				fatalError("Date beyond bounds of offsets")
 		}
 		let dateFormatter = DateFormatter()
 		dateFormatter.dateStyle = .medium
+		// need to highlight today with a blue highlight
 		let isToday = eventSource.isDateSameDayAsToday(date)
 		header.configure(title: headerDateFormatter.string(from: date), shouldHighlight: isToday)
 		return header
@@ -164,6 +181,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		tableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.row), at: .top, animated: true)
 	}
 
+	func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
+		return false
+	}
+
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 		let oldState = self.expandedState
 		if scrollView == collectionView {
@@ -187,6 +209,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		if indexPath.row % 7 == 0 {
+			// Need to to do this because setting the cell width to _exactly_ 1/7th
 			let leftOverWidth =  collectionView.bounds.width - floor(collectionView.frame.width/numberOfColumns) * 6
 			let size = CGSize(width: leftOverWidth, height: floor(collectionView.frame.width/numberOfColumns))
 			return size
@@ -194,6 +217,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 			let size = CGSize(width: floor(collectionView.frame.width/numberOfColumns), height: floor(collectionView.frame.width/numberOfColumns))
 			return size
 		}
+	}
+
+	func weatherDidUpdate(_ forecast: WeatherForecast) {
+		self.navigationItem.title = "\(forecast.emojiRepresentation)  \(forecast.temperature.rounded())℉"
 	}
 
 }

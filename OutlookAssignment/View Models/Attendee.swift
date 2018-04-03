@@ -13,7 +13,7 @@ struct Attendee {
 
 	enum Avatar {
 		case image(UIImage)
-		//Not supporting arbitrary initials right now, will add in the future
+//			Considered adding initials support at some point, but scrapped it later. Would let you specify a couple of initials and a background color, and would generate an avatar for you
 		//initials are really just 1-2 characters
 //		case initials(Character, Character?)
 	}

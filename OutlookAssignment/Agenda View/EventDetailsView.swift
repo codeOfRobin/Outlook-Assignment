@@ -11,8 +11,11 @@ import UIKit
 
 class EventDetailsView: UIView {
 
-	let presenceView = AttendeesView(frame: .zero)
 	let stackView = UIStackView()
+
+	// Shows avatars of the people attending the event
+	let presenceView = AttendeesView(frame: .zero)
+	// Shows event title. No longer restricted to 2 lines 🎉
 	let titleLabel = UILabel()
 	let locationView = LocationView(frame: .zero)
 	let dotView = DotView(frame: .zero)
@@ -25,11 +28,12 @@ class EventDetailsView: UIView {
 		stackView.addArrangedSubview(titleLabel)
 		stackView.addArrangedSubview(presenceView)
 		stackView.addArrangedSubview(locationView)
+
 		presenceView.translatesAutoresizingMaskIntoConstraints = false
 		titleLabel.translatesAutoresizingMaskIntoConstraints = false
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 
-
+		// A value of 0 means no limit on the number of lines
 		titleLabel.numberOfLines = 0
 
 		stackView.spacing = 20.0
@@ -50,10 +54,6 @@ class EventDetailsView: UIView {
 		} else {
 			presenceView.isHidden = true
 		}
-	}
-
-	override func layoutSubviews() {
-		super.layoutSubviews()
 	}
 
 	required init?(coder aDecoder: NSCoder) {

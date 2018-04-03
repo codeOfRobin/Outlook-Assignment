@@ -9,6 +9,7 @@
 import UIKit
 
 class DotView: UIView {
+
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
@@ -29,10 +30,10 @@ class DotView: UIView {
 	}
 
 	override var intrinsicContentSize: CGSize {
-		return CGSize(width: 20.0, height: 20.0)
+		return CGSize(width: Constants.Sizes.dotSize, height: Constants.Sizes.dotSize)
 	}
 
 	override func sizeThatFits(_ size: CGSize) -> CGSize {
-		return CGSize(width: 20.0, height: 20.0)
+		return CGSize(width: Constants.Sizes.dotSize, height: Constants.Sizes.dotSize)
 	}
 }

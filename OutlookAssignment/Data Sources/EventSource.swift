@@ -13,9 +13,10 @@ class EventSource {
 	var today = Date()
 
 	var calendar = Calendar(identifier: .gregorian)
-	var offsets = -100...100
+	var offsets = -1000...1000
 
 	init() {
+		// Not setting this causes the month names to be M01, M02, M03.....etc
 		calendar.locale = Locale.current
 	}
 
@@ -32,7 +33,7 @@ class EventSource {
 		}
 	}
 
-	func eventsFromDataset(at index: Int) -> [EventViewModel] {
+	func eventsFromDataSet(at index: Int) -> [EventViewModel] {
 		if let date = dateFrom(offset: index),
 			let day = Day(from: calendar.dateComponents([.day, .month, .year, .era], from: date)),
 			let events = events[day] {

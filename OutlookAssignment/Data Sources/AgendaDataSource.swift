@@ -19,7 +19,7 @@ class AgendaDataSource: NSObject, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let events = eventSource.eventsFromDataset(at: section)
+		let events = eventSource.eventsFromDataSet(at: section)
 		if events.count > 0 {
 			return events.count
 		} else {
@@ -28,7 +28,7 @@ class AgendaDataSource: NSObject, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let events = eventSource.eventsFromDataset(at: indexPath.section)
+		let events = eventSource.eventsFromDataSet(at: indexPath.section)
 
 		if events.count > 0 {
 			guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventCell else {

@@ -11,12 +11,15 @@ import UIKit
 class DateHeaderView: UITableViewHeaderFooterView {
 	let titleLabel = UILabel()
 
+	// Insets are kept separately in each view for now. Given a style guide from a designer, I'd like to move them to Styles.swift
 	let titleInsets = UIEdgeInsets(top: 6, left: 16, bottom: 6, right: 16)
 
 	let stackView = UIStackView()
 
 	override init(reuseIdentifier: String?) {
 		super.init(reuseIdentifier: reuseIdentifier)
+
+		// A value of 0 means no limit on the number of lines
 		titleLabel.numberOfLines = 0
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		self.contentView.addSubview(stackView)

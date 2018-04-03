@@ -8,28 +8,11 @@
 
 import UIKit
 
-protocol DateComponentsPresenter {
-	func shortMonthText(with components: DateComponents) -> String?
-	func dayText(with components: DateComponents) -> String?
-}
-
-class GregorianDateComponentsPresenter: DateComponentsPresenter {
-
-	let calendar: Calendar = Calendar(identifier: .gregorian)
-
-	func shortMonthText(with components: DateComponents) -> String? {
-		return components.day.flatMap{ calendar.shortStandaloneMonthSymbols[$0] }
-	}
-
-	func dayText(with components: DateComponents) -> String? {
-		return components.day.flatMap{ "\($0)" }
-	}
-}
-
 class DayCell: UICollectionViewCell {
 	let dayLabel = UILabel()
 	let monthLabel = UILabel()
 	let stackView = UIStackView()
+	// the view that shows up when you tap on a cell.
 	let highlightedBackgroundView = UIView()
 
 	override var isHighlighted: Bool {
@@ -83,13 +66,15 @@ class DayCell: UICollectionViewCell {
 		super.prepareForReuse()
 		highlightedBackgroundView.isHidden = true
 	}
-	// still confused what this should look like 😕. Should this accept DateComponents? Should month not be optional? SHould the logic for not showing the month label not be inside the cell? It def shouldn't have a Date
-	func configure(with day: Int, month: String?, isOdd: Bool) {
 
-		self.backgroundColor = isOdd ? .white : Styles.Colors.contrastBackgroundColor.color
+	func configure(with day: Int, month: String?, isMonthOdd: Bool) {
+
+		// Odd and even months have different colors for contrast related reasons
+		self.backgroundColor = isMonthOdd ? .white : Styles.Colors.contrastBackgroundColor.color
 
 		if day == 1 {
 			self.monthLabel.attributedText = NSAttributedString(string: month ?? "", attributes: Styles.Text.MonthTextStyle)
+			// we only show the monthLabel on the first day of the month
 			self.monthLabel.isHidden = false
 		} else {
 			self.monthLabel.isHidden = true

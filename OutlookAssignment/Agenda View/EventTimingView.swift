@@ -17,6 +17,7 @@ class EventTimingView: UIView {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 
+		// A value of 0 means no limit on the number of lines
 		startingTimeLabel.numberOfLines = 0
 		durationLabel.numberOfLines = 0
 		self.addSubview(startingTimeLabel)
@@ -27,13 +28,21 @@ class EventTimingView: UIView {
 		fatalError("init(coder:) has not been implemented")
 	}
 
+	// This view is manually laid out due to UIStackView shenanigans (I emailed Ogden about these early on)
 	override func layoutSubviews() {
 		super.layoutSubviews()
 
+		// calculate how much space (upto the frame width) the starting time label will take
 		let startingTimeIntrinsicSize = startingTimeLabel.intrinsicContentSize
+		// calculate the height using the width and `sizeThatFits`
 		let startingTimeSize = startingTimeLabel.sizeThatFits(CGSize(width: min(frame.size.width, startingTimeIntrinsicSize.width), height: CGFloat.greatestFiniteMagnitude))
+
+		// figure out how much space (upto the frame width) the starting time label will take
 		let durationIntrinsicSize = durationLabel.intrinsicContentSize
+		// calculate the height using the width and `sizeThatFits`
 		let durationSize = durationLabel.sizeThatFits(CGSize(width: min(frame.size.width, durationIntrinsicSize.width), height: CGFloat.greatestFiniteMagnitude))
+
+		// now actually layout the views
 		startingTimeLabel.frame = CGRect(origin: .zero, size: startingTimeSize)
 		durationLabel.frame = CGRect(x: 0, y: startingTimeLabel.frame.maxY + margin, width: durationSize.width, height: durationSize.height)
 	}
@@ -43,9 +52,15 @@ class EventTimingView: UIView {
 	}
 
 	override func sizeThatFits(_ size: CGSize) -> CGSize {
+
+		// calculate how much space (upto the frame width) the starting time label will take
 		let startingTimeIntrinsicSize = startingTimeLabel.intrinsicContentSize
+		// calculate the height using the width and `sizeThatFits`
 		let startingTimeSize = startingTimeLabel.sizeThatFits(CGSize(width: min(frame.size.width, startingTimeIntrinsicSize.width), height: CGFloat.greatestFiniteMagnitude))
+
+		// calculate how much space (upto the frame width) the starting time label will take
 		let durationIntrinsicSize = durationLabel.intrinsicContentSize
+		// calculate the height using the width and `sizeThatFits`
 		let durationSize = durationLabel.sizeThatFits(CGSize(width: min(frame.size.width, durationIntrinsicSize.width), height: CGFloat.greatestFiniteMagnitude))
 		if durationSize == .zero {
 			return CGSize(width: max(startingTimeSize.width, durationSize.width), height: startingTimeSize.height)
@@ -58,6 +73,7 @@ class EventTimingView: UIView {
 		switch timing {
 		case .allDay:
 			self.startingTimeLabel.attributedText = NSAttributedString(string: Constants.Strings.allDay, attributes: Styles.Text.StartingTimeStyle)
+			self.durationLabel.isHidden = true
 		case .timed(startingTime: let startingTime, duration: let duration):
 			self.startingTimeLabel.attributedText = NSAttributedString(string: startingTime, attributes: Styles.Text.StartingTimeStyle)
 			self.durationLabel.attributedText = NSAttributedString(string: duration, attributes: Styles.Text.Duration)
