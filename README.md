@@ -117,11 +117,12 @@ Most views have a `configure` method, that takes in a presentation model, and co
 # Things I missed out/want to improve
 
 - Tests for the UITableViewCell bindings.
+- A swift 4.1 update with some niceness for the `Result` type like this: https://twitter.com/stephencelis/status/979394451280982016
 - There's some transient broken constraints initially (for some reason UITableViewCellContentView is constrained to be 0 width)
 - Scrolling quickly in the `UITableView` has a delay scrolling to the right place in the `UICollectionView`. I tried using `layoutAttributes` to get the correct offsets in the collectionView, but that didn't work quite well either.
 - I would love to figure out how the "Month Overlay" works (when you start dragging on the calendar view, it shows the months while blurring out the actual calendar). My first theory involved using decoration views(and there's a couple of classes in my project trying to use those), but decoration views in general aren't supposed to depend on data, so I'm not sure how'd it work
 - Infinite scrolling would be a nice addition, but it's also kind of a pain to implement ('s calendar app seems to work on black magic for all I know, and even fantastical's implementation seems sub par since it pauses the user scrolling to load new content)
-- I'd like to display the weather for each day separately per day, but that'd require a lot of wrangling with the time travel API and pagination. For now, I'm displaying the weather in the navigation controller's titleView.
+- I'd like to display the weather for each day separately per day, but that'd require a lot of wrangling with the time travel API and pagination. For now, I'm displaying the weather in the navigation controller's titleView. In addition, we'd probably have to think about _which_ location you'd gather weather data for (the meeting? or the current user location? 🤔)
 - Use [`UIApplicationSignificantTimeChangeNotification`](https://developer.apple.com/documentation/uikit/uiapplicationsignificanttimechangenotification) to "re-jigger" all the dates once midnight strikes/some major time change happens
 
 
