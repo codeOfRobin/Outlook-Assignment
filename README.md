@@ -6,6 +6,9 @@ I'm Robin, and first of all I'd like to thank you for letting me participate in 
 
 Our aim in this challenge is to implement the Calendar/Agenda view as seen in the Outlook iOS app. I've tried my best to be faithful to the original design, and I've pointed out places where I've made different choices and added/removed features. There's also places where I've cut-out non essential features, but still try to articulate how I'd implement them if I had the time.
 
+Here's a gif of the app in action:
+![gif](https://thumbs.gfycat.com/BossyPointlessCrownofthornsstarfish-size_restricted.gif)
+
 # Stuff I've improved
 
 - **Dynamic Type** Almost all the views in the app now support dynamic type + expanded content. From the calendar cells to the labels in the agenda view.
@@ -17,6 +20,8 @@ Our aim in this challenge is to implement the Calendar/Agenda view as seen in th
 - **Feedback Generator** I've added a light impact feedback generator so that scrolling the agenda view feels like scrolling through a UIDatePicker
 - **Under 250 lines of code** Classes are decoupled for easy testability, and are generally single purpose and small.
 - **Forecast API** my Forecast API is well tested, and uses 's new `Codable` protocol for all operations
+- **Tapping on the status bar** takes you to the current date.
+![status bar](https://thumbs.gfycat.com/PaltryPoorEquestrian-size_restricted.gif)
 
 # Let's look at the app
 
@@ -92,12 +97,11 @@ Most views have a `configure` method, that takes in a presentation model, and co
 
 # Things I missed out/want to improve
 
-- Better colors for the `DotView` 😛.
-- Tests for my UITableViewCell bindings.
+- Tests for the UITableViewCell bindings.
 - Scrolling quickly in the `UITableView` has a delay scrolling to the right place in the `UICollectionView`. I tried using `layoutAttributes` to get the correct offsets in the collectionView, but that didn't work quite well either.
 - I would love to figure out how the "Month Overlay" works (when you start dragging on the calendar view, it shows the months while blurring out the actual calendar). My first theory involved using decoration views(and there's a couple of classes in my project trying to use those), but decoration views in general aren't supposed to depend on data, so I'm not sure how'd it work
 - Infinite scrolling would be a nice addition, but it's also kind of a pain to implement ('s calendar app seems to work on black magic for all I know, and even fantastical's implementation seems sub par since it pauses the user scrolling to load new content)
-- I'd like to display the weather for each day separately per day, but that'd require a lot of wrangling with the time travel API and pagination. For now, I'm displaying the weather in the navigation controller's titleView
+- I'd like to display the weather for each day separately per day, but that'd require a lot of wrangling with the time travel API and pagination. For now, I'm displaying the weather in the navigation controller's titleView.
 - Use [`UIApplicationSignificantTimeChangeNotification`](https://developer.apple.com/documentation/uikit/uiapplicationsignificanttimechangenotification) to "re-jigger" all the dates once midnight strikes/some major time change happens
 
 

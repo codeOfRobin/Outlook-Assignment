@@ -8,9 +8,10 @@
 
 import UIKit
 
-class CalendarViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class CalendarViewController: UIViewController, UITableViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, WeatherUpdatesDelegate {
 
 	let eventDataProvider: EventDataProvider
+	let locationWeatherProvider: LocationWeatherProvider
 
 	//	#A week is always seven days
 	//	Currently true, but historically false. A couple of out-of-use calendars, like the Decimal calendar and the Egyptian calendar had weeks that were 7, 8, or even 10 days.
@@ -48,7 +49,7 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 	let agendaDataSource: AgendaDataSource
 	let calendarDataSource: CalendarDataSource
 
-	init(dataProvider: EventDataProvider) {
+	init(dataProvider: EventDataProvider, session: URLSession = .shared, apiKey: String = Credentials.testCreds.apiKey) {
 		self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
 		// not sure if this is the best way to go to the middle
 		self.indexPathOfHighlightedCell = IndexPath(row: 0, section: eventSource.offsets.count/2)
@@ -57,6 +58,8 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		self.calendarDataSource = CalendarDataSource(eventSource: eventSource)
 
 		self.eventDataProvider = dataProvider
+		let forecastClient = ForecastAPIClient(session: session, key: apiKey)
+		self.locationWeatherProvider = LocationWeatherProvider(forecastClient: forecastClient)
 		super.init(nibName: nil, bundle: nil)
 	}
 
@@ -107,13 +110,16 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 
 		layout.minimumInteritemSpacing = 0.0
 		layout.minimumLineSpacing = 0.0
+
+		locationWeatherProvider.delegate = self
+		locationWeatherProvider.start()
+
+		// scroll to offset:0 , i.e. today
+		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-
-		// scroll to offset:0 , i.e. today
-		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
 	}
 
 	override func viewDidLayoutSubviews() {
@@ -175,6 +181,11 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 		tableView.scrollToRow(at: IndexPath(row: 0, section: indexPath.row), at: .top, animated: true)
 	}
 
+	func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
+		tableView.scrollToRow(at: IndexPath(row: 0, section: eventSource.offsets.count/2), at: .middle, animated: true)
+		return false
+	}
+
 	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
 		let oldState = self.expandedState
 		if scrollView == collectionView {
@@ -206,6 +217,10 @@ class CalendarViewController: UIViewController, UITableViewDelegate, UICollectio
 			let size = CGSize(width: floor(collectionView.frame.width/numberOfColumns), height: floor(collectionView.frame.width/numberOfColumns))
 			return size
 		}
+	}
+
+	func weatherDidUpdate(_ forecast: WeatherForecast) {
+		self.navigationItem.title = "\(forecast.emojiRepresentation)  \(forecast.temperature.rounded())℉"
 	}
 
 }

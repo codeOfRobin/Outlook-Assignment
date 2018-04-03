@@ -21,6 +21,40 @@ struct ForecastResponse: Codable {
 struct WeatherForecast: Codable {
 	let summary: String
 	let temperature: Float
+	let iconType: String
+
+	enum CodingKeys: String, CodingKey {
+		case summary
+		case temperature
+		case iconType = "icon"
+	}
+
+	var emojiRepresentation: String {
+		switch iconType {
+		case "clear-day":
+			return "☀️"
+		case "clear-night":
+			return "🌙"
+		case "rain":
+			return "🌧"
+		case "snow":
+			return "❄️"
+		case "sleet":
+			return "sleet"
+		case "wind":
+			return "💨"
+		case "fog":
+			return "🌫"
+		case "cloudy":
+			return "☁️"
+		case "partly-cloudy-day":
+			return "🌤"
+		case "partly-cloudy-night":
+			return "☁️🌙"
+		default:
+			return "❓"
+		}
+	}
 }
 
 struct Point {
@@ -88,9 +122,12 @@ class ForecastAPIClient {
 		self.requestBuilder = ForecastRequestBuilder(apiKey: key)
 	}
 
-	func getWeather(for point: Point, completion: @escaping (WeatherForecast) -> Void) {
+	func getWeather(for point: Point, completion: @escaping (WeatherForecast) -> Void) -> URLSessionDataTask {
 		let request = requestBuilder.request(for: .currentForecast(point))
-		session.dataTask(with: request!) { (data, response, error) in
+		let dataTask = session.dataTask(with: request!) { (data, response, error) in
+			guard (error as NSError?)?.code != -999 else {
+				return
+			}
 			let jsonDecoder = JSONDecoder()
 			do {
 				let weatherResponse = try jsonDecoder.decode(ForecastResponse.self, from: data!)
@@ -100,7 +137,8 @@ class ForecastAPIClient {
 			} catch {
 
 			}
-
 		}
+		dataTask.resume()
+		return dataTask
 	}
 }
