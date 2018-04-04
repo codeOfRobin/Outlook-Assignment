@@ -61,7 +61,7 @@ In addition, dragging on either view causes the other view to collapse with an a
 
 In order to figure out things like margins, cell sizes etc, I tried overlaying rectangles on top of screenshots (Check out the "Outlook Mobile screens for reference" sketch file in the repo). Also I used [Sip](http://sipapp.io) to grab colors for use in the app.
 
-For things like text sizes, I'm a heavy supporter of Dynamic type (the current Outlook app doesn't seem to support it 😕), so I matched font sizes to 's UI style guidelines from their design resources. So, a 16pt UILabel now corresponds to a `UIFontTextStyle.callout`.
+For things like text sizes, I'm a heavy supporter of Dynamic type (the current Outlook app doesn't seem to support it 😕), so I matched font sizes to 's UI style guidelines from their design resources. So, a 16pt UILabel now corresponds to a `UIFontTextStyle.callout`.
 
 To structure this in code, I took inspiration from [Githawk](https://github.com/GitHawkApp/GitHawk), where all the styles are represented as [static properties in an enum](https://github.com/GitHawkApp/GitHawk/blob/master/Classes/Views/Styles.swift). This has 2 benefits - static properties are lazily evaluated and cached, and allows for easier namespacing too 🎉.
 
