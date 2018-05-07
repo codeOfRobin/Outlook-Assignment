@@ -1,5 +1,7 @@
 # Hi Outlook folks 👋!
 
+[Status: Selected for interviewing! 🎉]
+
 I'm Robin, and first of all I'd like to thank you for letting me participate in your iOS engineer challenge. It's been a lot of fun, and honestly I've learned a lot.
 
 ## A little about me
